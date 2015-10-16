@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="http://java.sun.com/xml/ns/persistence"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence
+     http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd"
+	version="2.0">
+
+
+
+
+	<persistence-unit name="findpecas_ds" transaction-type="JTA">
+	
+    <provider>org.hibernate.ejb.HibernatePersistence</provider>
+    <jta-data-source>java:jboss/datasources/findpecas_ds</jta-data-source>
+    
+    <!-- entidades mapeadas -->
+		<class>br.com.findpecas.model.Avaliacao</class>
+		<class>br.com.findpecas.model.Busca</class>
+		<class>br.com.findpecas.model.Cartao</class>
+		<class>br.com.findpecas.model.Cidade</class>
+		<class>br.com.findpecas.model.Contato</class>
+		<class>br.com.findpecas.model.Empresa</class>
+		<class>br.com.findpecas.model.Endereco</class>
+		<class>br.com.findpecas.model.Estado</class>
+		<class>br.com.findpecas.model.Fabricante</class>
+		<class>br.com.findpecas.model.FormaPagamento</class>
+		<class>br.com.findpecas.model.Logomarca</class>
+		<class>br.com.findpecas.model.ModeloVeiculo</class>
+		<class>br.com.findpecas.model.MotivoExclusaoBusca</class>
+		<class>br.com.findpecas.model.Orcamento</class>
+		<class>br.com.findpecas.model.PreCadastroEmpresa</class>
+		<class>br.com.findpecas.model.TipoNegocio</class>
+		<class>br.com.findpecas.model.TipoVeiculo</class>
+		<class>br.com.findpecas.model.User</class>
+		<class>br.com.findpecas.model.UserPermission</class>
+		<class>br.com.findpecas.model.Usuario</class>
+		<class>br.com.findpecas.model.Veiculo</class>
+    
+    <properties>
+      <property name="hibernate.dialect" value="org.hibernate.dialect.MySQL5InnoDBDialect"/>
+     <!--  <property name="hibernate.transaction.jta.platform" value="org.hibernate.service.jta.platform.internal.JBossAppServerJtaPlatform"/> -->
+      
+      <property name="hibernate.show_sql" value="true" />
+	  <property name="hibernate.format_sql" value="true" />
+	  
+	  
+	  <!-- atualiza o banco, gera as tabelas se for preciso
+	  <property name="hibernate.hbm2ddl.auto" value="update" /> -->
+    </properties>
+    
+  </persistence-unit>
+
+</persistence>
