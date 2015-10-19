@@ -33,11 +33,11 @@ public class FormaPagamento  {
 	public FormaPagamento() {
 	}
 
-	public Integer getCodFormaPagamento() {
+	public Integer getCodigo() {
 		return this.codigo;
 	}
 
-	public void setCodFormaPagamento(Integer codigo) {
+	public void setCodigo(Integer codigo) {
 		this.codigo = codigo;
 	}
 

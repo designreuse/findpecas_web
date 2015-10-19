@@ -36,8 +36,5 @@ public class JpaMotivoExclusaoBusca implements IMotivoExclusaoBusca{
 	}
 
 	@Override
-	public void excluir(MotivoExclusaoBusca motivoExclusaoBusca) {
-		MotivoExclusaoBusca motivoExclusaoBuscaARemover = buscarPorId(motivoExclusaoBusca.getCodigo());
-	      manager.remove(motivoExclusaoBuscaARemover);
-	}
+	public void excluir(MotivoExclusaoBusca motivoExclusaoBusca) {}
 }

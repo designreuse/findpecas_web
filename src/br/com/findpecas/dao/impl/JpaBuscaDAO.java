@@ -38,8 +38,8 @@ public class JpaBuscaDAO implements IBuscaDAO {
 
 	@Override
 	public void excluir(Busca busca) {
-	//	Busca buscaARemover = buscarPorId(busca.getCodigo());
-	  //    manager.remove(buscaARemover);
+		Busca buscaARemover = buscarPorId(busca.getCodigo());
+	    manager.remove(buscaARemover);
 	}
 
 }

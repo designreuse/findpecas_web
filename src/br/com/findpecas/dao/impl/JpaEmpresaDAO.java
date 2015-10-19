@@ -39,10 +39,7 @@ public class JpaEmpresaDAO implements IEmpresaDAO {
 	}
 
 	@Override
-	public void excluir(Empresa empresa) {
-		//Empresa empresaARemover = buscarPorId(empresa.getCodigo());
-	      //manager.remove(empresaARemover);
-	}
+	public void excluir(Empresa empresa) {}
 
 	@Override
 	public Empresa buscarPorEmail(String email) {

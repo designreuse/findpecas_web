@@ -4,14 +4,14 @@ import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-import javax.persistence.PersistenceContextType;
+import javax.persistence.TypedQuery;
 
 import org.springframework.stereotype.Repository;
 
 import br.com.findpecas.dao.ICidadeDAO;
 import br.com.findpecas.model.Cidade;
 import br.com.findpecas.model.Estado;
-import br.com.findpecas.model.Fabricante;
+import br.com.findpecas.model.Usuario;
 
 @Repository
 public class JpaCidadeDAO implements ICidadeDAO {
@@ -26,19 +26,31 @@ public class JpaCidadeDAO implements ICidadeDAO {
 
 	@Override
 	public Cidade buscarPeloNome(String nome) {
-		return null;
+		String consulta = "select c from Cidade c where c.nome = :nome";
+		TypedQuery<Cidade> query =
+				manager.createQuery(consulta, Cidade.class);
+				query.setParameter("cidade", nome);
+				
+		Cidade cidade = query.getSingleResult();
+		return cidade;
 	}
 
 
 	@Override
 	public List<Cidade> buscarPorEstado(Estado estado) {
-		return null;
+		String consulta = "select c from Cidade c where c.estado = :estado";
+		TypedQuery<Cidade> query = manager.createQuery(consulta, Cidade.class);
+				query.setParameter("estado", estado);
+				
+		List<Cidade> cidades = query.getResultList();
+		
+		return cidades;
 	}
 
 
 	@Override
 	public List<Cidade> listarCidades() {
-		return manager.createQuery("select u from Cidade u").getResultList();
+		return manager.createQuery("select c from Cidade c").getResultList();
 	}
 
 

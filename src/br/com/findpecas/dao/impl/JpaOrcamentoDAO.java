@@ -38,8 +38,8 @@ public class JpaOrcamentoDAO implements  IOrcamentoDAO{
 
 	@Override
 	public void excluir(Orcamento orcamento) {
-	//	Orcamento orcamentoARemover = buscarPorId(orcamento.getCodigo());
-	  //    manager.remove(orcamentoARemover);
+		//Orcamento orcamentoARemover = buscarPorId(orcamento.getCodigo());
+	    //manager.remove(orcamentoARemover);
 	}
 
 }

@@ -37,9 +37,6 @@ public class JpaFabricanteDAO implements IFabricanteDAO{
 	}
 
 	@Override
-	public void excluir(Fabricante fabricante) {
-		//Fabricante fabricanteARemover = buscarPorId(fabricante.getCodigo());
-	      //manager.remove(fabricanteARemover);
-	}
+	public void excluir(Fabricante fabricante) {}
 
 }

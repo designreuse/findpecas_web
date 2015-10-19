@@ -35,8 +35,8 @@ public class JpaVeiculoDAO implements IVeiculoDAO {
 
 	@Override
 	public void excluir(Veiculo veiculo) {
-		//Veiculo veiculoARemover = buscarPorId(veiculo.getCodigo());
-	      //manager.remove(veiculoARemover);
+		Veiculo veiculoARemover = buscarPorId(veiculo.getCodigo());
+	    manager.remove(veiculoARemover);
 	}
 	
 }

@@ -37,8 +37,5 @@ public class JpaTipoVeiculoDAO implements ITipoVeiculoDAO{
 	}
 
 	@Override
-	public void excluir(TipoVeiculo tipoVeiculo) {
-		//TipoVeiculo tipoVeiculoARemover = buscarPorId(tipoVeiculo.getCodigo());
-	      //manager.remove(tipoVeiculoARemover);
-	}
+	public void excluir(TipoVeiculo tipoVeiculo) {}
 }
