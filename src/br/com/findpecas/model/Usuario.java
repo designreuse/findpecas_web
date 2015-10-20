@@ -5,6 +5,8 @@ import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -19,6 +21,7 @@ import javax.persistence.TemporalType;
 public class Usuario  {
 
 	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="cod_usuario")
 	private Integer codigo;
 
@@ -30,14 +33,10 @@ public class Usuario  {
 
 	private String email;
 
-	private int isAtivo;
-
 	private String nome;
 
-	private String senha;
-
 	@OneToMany(mappedBy="usuario")
-	private List<Avaliacao> avaliacaos;
+	private List<Avaliacao> avaliacoes;
 
 	@OneToMany(mappedBy="usuario")
 	private List<Busca> buscas;
@@ -88,14 +87,6 @@ public class Usuario  {
 		this.email = email;
 	}
 
-	public int getIsAtivo() {
-		return this.isAtivo;
-	}
-
-	public void setIsAtivo(int isAtivo) {
-		this.isAtivo = isAtivo;
-	}
-
 	public String getNome() {
 		return this.nome;
 	}
@@ -104,31 +95,23 @@ public class Usuario  {
 		this.nome = nome;
 	}
 
-	public String getSenha() {
-		return this.senha;
+	public List<Avaliacao> getAvaliacoes() {
+		return this.avaliacoes;
 	}
 
-	public void setSenha(String senha) {
-		this.senha = senha;
-	}
-
-	public List<Avaliacao> getAvaliacaos() {
-		return this.avaliacaos;
-	}
-
-	public void setAvaliacaos(List<Avaliacao> avaliacaos) {
-		this.avaliacaos = avaliacaos;
+	public void setAvaliacoes(List<Avaliacao> avaliacaos) {
+		this.avaliacoes = avaliacaos;
 	}
 
 	public Avaliacao addAvaliacao(Avaliacao avaliacao) {
-		getAvaliacaos().add(avaliacao);
+		getAvaliacoes().add(avaliacao);
 		avaliacao.setUsuario(this);
 
 		return avaliacao;
 	}
 
 	public Avaliacao removeAvaliacao(Avaliacao avaliacao) {
-		getAvaliacaos().remove(avaliacao);
+		getAvaliacoes().remove(avaliacao);
 		avaliacao.setUsuario(null);
 
 		return avaliacao;

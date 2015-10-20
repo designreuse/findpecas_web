@@ -4,6 +4,8 @@ import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
@@ -13,8 +15,9 @@ import javax.persistence.OneToMany;
 public class Estado  {
 
 	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="cod_estado")
-	private int codigo;
+	private Integer codigo;
 
 	private String nome;
 
@@ -28,11 +31,11 @@ public class Estado  {
 	public Estado() {
 	}
 
-	public Integer getCodEstado() {
+	public Integer getCodigo() {
 		return this.codigo;
 	}
 
-	public void setCodEstado(Integer codigo) {
+	public void setCodigo(Integer codigo) {
 		this.codigo = codigo;
 	}
 

@@ -4,6 +4,8 @@ import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
@@ -18,10 +20,14 @@ import javax.persistence.Table;
 public class TipoNegocio  {
 
 	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="cod_tipo_negocio")
 	private Integer codigo;
 
 	private String descricao;
+
+	@OneToMany(mappedBy="tipoNegocio")
+	private List<Busca> buscas;
 
 	@ManyToMany
 	@JoinTable(
@@ -34,9 +40,6 @@ public class TipoNegocio  {
 			}
 		)
 	private List<Empresa> empresas;
-	
-	@OneToMany(mappedBy="tipoNegocio")
-	private List<Busca> buscas;
 
 	public TipoNegocio() {
 	}
@@ -57,16 +60,12 @@ public class TipoNegocio  {
 		this.descricao = descricao;
 	}
 
-	public List<Empresa> getEmpresas() {
-		return this.empresas;
-	}
-
-	public void setEmpresas(List<Empresa> empresas) {
-		this.empresas = empresas;
-	}
-	
 	public List<Busca> getBuscas() {
 		return this.buscas;
+	}
+
+	public void setBuscas(List<Busca> buscas) {
+		this.buscas = buscas;
 	}
 
 	public Busca addBusca(Busca busca) {
@@ -81,6 +80,14 @@ public class TipoNegocio  {
 		busca.setTipoNegocio(null);
 
 		return busca;
+	}
+
+	public List<Empresa> getEmpresas() {
+		return this.empresas;
+	}
+
+	public void setEmpresas(List<Empresa> empresas) {
+		this.empresas = empresas;
 	}
 
 }

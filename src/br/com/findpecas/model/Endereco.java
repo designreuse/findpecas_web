@@ -2,6 +2,8 @@ package br.com.findpecas.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -12,6 +14,7 @@ import javax.persistence.NamedQuery;
 public class Endereco  {
 
 	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="cod_endereco")
 	private Integer codigo;
 
@@ -40,11 +43,11 @@ public class Endereco  {
 	public Endereco() {
 	}
 
-	public Integer getCodEndereco() {
+	public Integer getCodigo() {
 		return this.codigo;
 	}
 
-	public void setCodEndereco(Integer codigo) {
+	public void setCodigo(Integer codigo) {
 		this.codigo = codigo;
 	}
 

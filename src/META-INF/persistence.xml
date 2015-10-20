@@ -13,7 +13,7 @@
     <provider>org.hibernate.ejb.HibernatePersistence</provider>
     <jta-data-source>java:jboss/datasources/findpecas_ds</jta-data-source>
     
-    <!-- entidades mapeadas -->
+    <!-- Entidades mapeadas -->
 		<class>br.com.findpecas.model.Avaliacao</class>
 		<class>br.com.findpecas.model.Busca</class>
 		<class>br.com.findpecas.model.Cartao</class>
@@ -28,11 +28,11 @@
 		<class>br.com.findpecas.model.ModeloVeiculo</class>
 		<class>br.com.findpecas.model.MotivoExclusaoBusca</class>
 		<class>br.com.findpecas.model.Orcamento</class>
+		<class>br.com.findpecas.model.Permission</class>
 		<class>br.com.findpecas.model.PreCadastroEmpresa</class>
 		<class>br.com.findpecas.model.TipoNegocio</class>
 		<class>br.com.findpecas.model.TipoVeiculo</class>
 		<class>br.com.findpecas.model.User</class>
-		<class>br.com.findpecas.model.UserPermission</class>
 		<class>br.com.findpecas.model.Usuario</class>
 		<class>br.com.findpecas.model.Veiculo</class>
     

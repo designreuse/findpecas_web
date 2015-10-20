@@ -48,10 +48,11 @@ class="br.com.findpecas.util.FPAuthenticationProvider"/>
 			  users-by-username-query="SELECT login, password, active
                                            FROM user
                                           WHERE login = ? "
-			authorities-by-username-query="SELECT u.login, p.permission
-                                             FROM user u, user_permission p
-                                            WHERE u.id = p.id
-                                              AND u.login = ?"/>
+            authorities-by-username-query="SELECT u.login, p.permission
+											FROM user u, user_permission up, permission p
+											WHERE u.cod_user = up.cod_user
+											AND up.cod_permission = p.cod_permission
+											AND u.login = ?"/>
 		  </security:authentication-provider>
 	</security:authentication-manager>
 	

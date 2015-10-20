@@ -4,6 +4,8 @@ import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
@@ -17,6 +19,7 @@ import javax.persistence.OneToOne;
 public class Empresa  {
 
 	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="cod_empresa")
 	private Integer codigo;
 
@@ -31,12 +34,8 @@ public class Empresa  {
 
 	private String nome;
 
-	private String senha;
-
-	private String status;
-
 	@OneToMany(mappedBy="empresa")
-	private List<Avaliacao> avaliacaos;
+	private List<Avaliacao> avaliacoes;
 
 	@OneToMany(mappedBy="empresa")
 	private List<Contato> contatos;
@@ -47,7 +46,7 @@ public class Empresa  {
 
 	@ManyToMany
 	@JoinTable(
-		name="empresa_tipo_veiculo"
+		name="EMPRESA_TIPO_VEICULO"
 		, joinColumns={
 			@JoinColumn(name="cod_empresa")
 			}
@@ -123,39 +122,23 @@ public class Empresa  {
 		this.nome = nome;
 	}
 
-	public String getSenha() {
-		return this.senha;
+	public List<Avaliacao> getAvaliacoes() {
+		return this.avaliacoes;
 	}
 
-	public void setSenha(String senha) {
-		this.senha = senha;
-	}
-
-	public String getStatus() {
-		return this.status;
-	}
-
-	public void setStatus(String status) {
-		this.status = status;
-	}
-
-	public List<Avaliacao> getAvaliacaos() {
-		return this.avaliacaos;
-	}
-
-	public void setAvaliacaos(List<Avaliacao> avaliacaos) {
-		this.avaliacaos = avaliacaos;
+	public void setAvaliacoes(List<Avaliacao> avaliacaos) {
+		this.avaliacoes = avaliacaos;
 	}
 
 	public Avaliacao addAvaliacao(Avaliacao avaliacao) {
-		getAvaliacaos().add(avaliacao);
+		getAvaliacoes().add(avaliacao);
 		avaliacao.setEmpresa(this);
 
 		return avaliacao;
 	}
 
 	public Avaliacao removeAvaliacao(Avaliacao avaliacao) {
-		getAvaliacaos().remove(avaliacao);
+		getAvaliacoes().remove(avaliacao);
 		avaliacao.setEmpresa(null);
 
 		return avaliacao;
@@ -247,7 +230,7 @@ public class Empresa  {
 		return this.logomarca;
 	}
 
-	public void setLogomarca(Logomarca logomarca) {
+	public void setLogomarcas(Logomarca logomarca) {
 		this.logomarca = logomarca;
 	}
 

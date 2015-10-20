@@ -5,10 +5,13 @@ import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
+import org.springframework.stereotype.Repository;
+
 import br.com.findpecas.dao.IUserDAO;
 import br.com.findpecas.model.FormaPagamento;
 import br.com.findpecas.model.User;
 
+@Repository
 public class JpaUserDAO implements IUserDAO{
 	
 	@PersistenceContext
@@ -36,7 +39,7 @@ public class JpaUserDAO implements IUserDAO{
 
 	@Override
 	public void excluir(User user) {
-		User userARemover = buscarPorId(user.getId());
+		User userARemover = buscarPorId(user.getCodigo());
 	    manager.remove(userARemover);
 	}
 

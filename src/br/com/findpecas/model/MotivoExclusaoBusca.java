@@ -2,10 +2,12 @@ package br.com.findpecas.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 import javax.persistence.NamedQuery;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -14,6 +16,7 @@ import javax.persistence.Table;
 public class MotivoExclusaoBusca  {
 
 	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="cod_mot_excl_busca")
 	private Integer codigo;
 
@@ -22,7 +25,7 @@ public class MotivoExclusaoBusca  {
 	@Column(name="qtd_dias")
 	private int qtdDias;
 
-	@ManyToOne
+	@OneToOne
 	@JoinColumn(name="cod_busca")
 	private Busca busca;
 

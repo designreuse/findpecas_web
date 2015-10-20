@@ -5,11 +5,14 @@ import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
@@ -18,6 +21,7 @@ import javax.persistence.TemporalType;
 public class Busca  {
 
 	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="cod_busca")
 	private Integer codigo;
 
@@ -41,17 +45,17 @@ public class Busca  {
 	@ManyToOne
 	@JoinColumn(name="cod_usuario")
 	private Usuario usuario;
-	
-	@ManyToOne
-	@JoinColumn(name="cod_tipo_negocio")
-	private TipoNegocio tipoNegocio;
 
 	@ManyToOne
 	@JoinColumn(name="cod_veiculo")
 	private Veiculo veiculo;
 
-	@OneToMany(mappedBy="busca")
-	private List<MotivoExclusaoBusca> motivoExclusaoBuscas;
+	@ManyToOne
+	@JoinColumn(name="cod_tipo_negocio")
+	private TipoNegocio tipoNegocio;
+
+	@OneToOne(mappedBy="busca")
+	private MotivoExclusaoBusca motivoExclusaoBusca;
 
 	@OneToMany(mappedBy="busca")
 	private List<Orcamento> orcamentos;
@@ -130,7 +134,7 @@ public class Busca  {
 	public void setVeiculo(Veiculo veiculo) {
 		this.veiculo = veiculo;
 	}
-	
+
 	public TipoNegocio getTipoNegocio() {
 		return this.tipoNegocio;
 	}
@@ -139,22 +143,12 @@ public class Busca  {
 		this.tipoNegocio = tipoNegocio;
 	}
 
-	public List<MotivoExclusaoBusca> getMotivoExclusaoBuscas() {
-		return this.motivoExclusaoBuscas;
+	public MotivoExclusaoBusca getMotivoExclusaoBusca() {
+		return this.motivoExclusaoBusca;
 	}
 
-	public MotivoExclusaoBusca addMotivoExclusaoBusca(MotivoExclusaoBusca motivoExclusaoBusca) {
-		getMotivoExclusaoBuscas().add(motivoExclusaoBusca);
-		motivoExclusaoBusca.setBusca(this);
-
-		return motivoExclusaoBusca;
-	}
-
-	public MotivoExclusaoBusca removeMotivoExclusaoBusca(MotivoExclusaoBusca motivoExclusaoBusca) {
-		getMotivoExclusaoBuscas().remove(motivoExclusaoBusca);
-		motivoExclusaoBusca.setBusca(null);
-
-		return motivoExclusaoBusca;
+	public void setMotivoExclusaoBusca(MotivoExclusaoBusca motivoExclusaoBusca) {
+		this.motivoExclusaoBusca = motivoExclusaoBusca;
 	}
 
 	public List<Orcamento> getOrcamentos() {

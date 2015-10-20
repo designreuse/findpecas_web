@@ -5,10 +5,13 @@ import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
+import org.springframework.stereotype.Repository;
+
 import br.com.findpecas.dao.ICartaoDAO;
 import br.com.findpecas.model.Cartao;
 import br.com.findpecas.model.Logomarca;
 
+@Repository
 public class JpaCartaoDAO implements ICartaoDAO {
 	
 	@PersistenceContext

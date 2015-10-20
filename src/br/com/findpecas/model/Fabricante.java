@@ -4,6 +4,8 @@ import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
@@ -16,6 +18,7 @@ import javax.persistence.OneToMany;
 public class Fabricante  {
 
 	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="cod_fabricante")
 	private Integer codigo;
 
@@ -23,7 +26,7 @@ public class Fabricante  {
 
 	@ManyToMany
 	@JoinTable(
-		name="fabricante_tipo_veiculo"
+		name="FABRICANTE_TIPO_VEICULO"
 		, joinColumns={
 			@JoinColumn(name="cod_fabricante")
 			}

@@ -2,8 +2,14 @@ package br.com.findpecas.model;
 
 import java.util.List;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
@@ -13,7 +19,9 @@ import javax.persistence.OneToOne;
 public class User  {
 
 	@Id
-	private Integer id;
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@Column(name="cod_user")
+	private int codigo;
 
 	private int active;
 
@@ -26,21 +34,30 @@ public class User  {
 	@OneToOne(mappedBy="user")
 	private Empresa empresa;
 
-	@OneToMany(mappedBy="user")
-	private List<UserPermission> userPermissions;
+	@ManyToMany
+	@JoinTable(
+		name="USER_PERMISSION"
+		, joinColumns={
+			@JoinColumn(name="cod_user")
+			}
+		, inverseJoinColumns={
+			@JoinColumn(name="cod_permission")
+			}
+		)
+	private List<Permission> permissions;
 
-	@OneToOne(mappedBy="user")
-	private Usuario usuario;
+	@OneToMany(mappedBy="user")
+	private List<Usuario> usuarios;
 
 	public User() {
 	}
 
-	public Integer getId() {
-		return this.id;
+	public Integer getCodigo() {
+		return this.codigo;
 	}
 
-	public void setId(Integer id) {
-		this.id = id;
+	public void setCodigo(Integer codigo) {
+		this.codigo = codigo;
 	}
 
 	public int getActive() {
@@ -83,35 +100,34 @@ public class User  {
 		this.empresa = empresa;
 	}
 
-
-	public List<UserPermission> getUserPermissions() {
-		return this.userPermissions;
+	public List<Permission> getPermissions() {
+		return this.permissions;
 	}
 
-	public void setUserPermissions(List<UserPermission> userPermissions) {
-		this.userPermissions = userPermissions;
+	public void setPermissions(List<Permission> permissions) {
+		this.permissions = permissions;
 	}
 
-	public UserPermission addUserPermission(UserPermission userPermission) {
-		getUserPermissions().add(userPermission);
-		userPermission.setUser(this);
-
-		return userPermission;
+	public List<Usuario> getUsuarios() {
+		return this.usuarios;
 	}
 
-	public UserPermission removeUserPermission(UserPermission userPermission) {
-		getUserPermissions().remove(userPermission);
-		userPermission.setUser(null);
-
-		return userPermission;
+	public void setUsuarios(List<Usuario> usuarios) {
+		this.usuarios = usuarios;
 	}
 
-	public Usuario getUsuario() {
-		return this.usuario;
+	public Usuario addUsuario(Usuario usuario) {
+		getUsuarios().add(usuario);
+		usuario.setUser(this);
+
+		return usuario;
 	}
 
-	public void setUsuario(Usuario usuario) {
-		this.usuario = usuario;
+	public Usuario removeUsuario(Usuario usuario) {
+		getUsuarios().remove(usuario);
+		usuario.setUser(null);
+
+		return usuario;
 	}
 
 }
