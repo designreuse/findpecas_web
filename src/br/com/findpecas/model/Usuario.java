@@ -3,6 +3,7 @@ package br.com.findpecas.model;
 import java.util.Date;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -41,11 +42,11 @@ public class Usuario  {
 	@OneToMany(mappedBy="usuario")
 	private List<Busca> buscas;
 
-	@ManyToOne
+	@ManyToOne(cascade = CascadeType.PERSIST)
 	@JoinColumn(name="cod_cidade")
 	private Cidade cidade;
 
-	@OneToOne
+	@OneToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name="cod_user")
 	private User user;
 

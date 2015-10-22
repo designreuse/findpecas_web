@@ -1,5 +1,6 @@
 package br.com.findpecas.model;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -36,7 +37,7 @@ public class Endereco  {
 	@JoinColumn(name="cod_empresa")
 	private Empresa empresa;
 
-	@ManyToOne
+	@ManyToOne(cascade = CascadeType.PERSIST)
 	@JoinColumn(name="cod_cidade")
 	private Cidade cidade;
 

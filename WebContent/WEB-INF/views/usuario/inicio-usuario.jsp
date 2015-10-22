@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ page import="br.com.findpecas.web.controller.UsuarioController"%>
 <!DOCTYPE html>
 <html>
 
@@ -48,27 +49,27 @@
                     </div>
                 </li>
 				<li class = "active">
-                    <a href="layouts.html"><i class="fa fa-home"></i> <span class="nav-label">Início</span></a>
+                    <a href="<%= request.getContextPath() + "/usuario/inicio-usuario" %>"><i class="fa fa-home"></i> <span class="nav-label">Início</span></a>
                 </li>
                 <li>
-                    <a href="layouts.html"><i class="fa fa-cog"></i> <span class="nav-label">Perfil</span></a>
+                    <a href="<%= request.getContextPath() + "/usuario/perfil" %>"><i class="fa fa-cog"></i> <span class="nav-label">Perfil</span></a>
                 </li>
                 <li>
                     <a href="#"><i class="fa fa-car"></i> <span class="nav-label">Veículos</span><span class="fa arrow"></span></a>
                     <ul class="nav nav-second-level collapse">
-                        <li><a href="usuario/novo-veiculo">Novo veículo</a></li>
-                        <li><a href="usuario/veiculos">Meus veículos</a></li>
+                        <li><a href="<%= request.getContextPath() + "/usuario/novo-veiculo" %>">Novo veículo</a></li>
+                        <li><a href="<%= request.getContextPath() + "/usuario/veiculos" %>">Meus veículos</a></li>
                     </ul>
                 </li>
 				<li>
-                    <a href="index.html"><i class="fa fa-search"></i> <span class="nav-label">Buscas</span> <span class="fa arrow"></span></a>
+                    <a href="#"><i class="fa fa-search"></i> <span class="nav-label">Buscas</span> <span class="fa arrow"></span></a>
                     <ul class="nav nav-second-level collapse">
-                        <li><a href="usuario/nova-busca">Nova busca</a></li>
-                        <li><a href="usuario/buscas">Minhas buscas</a></li>
+                        <li><a href="<%= request.getContextPath() + "/usuario/nova-busca" %>">Nova busca</a></li>
+                        <li><a href="<%= request.getContextPath() + "/usuario/buscas" %>">Minhas buscas</a></li>
                     </ul>
                 </li>
 				<li>
-                    <a href="layouts.html"><i class="fa fa-usd"></i> <span class="nav-label">Orçamentos Aprovados</span></a>
+                    <a href="<%= request.getContextPath() + "/usuario/orcamentos-aprovados" %>"><i class="fa fa-usd"></i> <span class="nav-label">Orçamentos Aprovados</span></a>
 					
                 </li>
             </ul>

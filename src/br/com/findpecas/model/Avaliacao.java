@@ -21,7 +21,7 @@ public class Avaliacao  {
 	private String observacao;
 
 	@Column(name="valor_avaliacao")
-	private String valorAvaliacao;
+	private int valorAvaliacao;
 
 	@ManyToOne
 	@JoinColumn(name="cod_empresa")
@@ -50,11 +50,11 @@ public class Avaliacao  {
 		this.observacao = observacao;
 	}
 
-	public String getValorAvaliacao() {
+	public int getValorAvaliacao() {
 		return this.valorAvaliacao;
 	}
 
-	public void setValorAvaliacao(String valorAvaliacao) {
+	public void setValorAvaliacao(int valorAvaliacao) {
 		this.valorAvaliacao = valorAvaliacao;
 	}
 

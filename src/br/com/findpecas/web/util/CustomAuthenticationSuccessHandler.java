@@ -44,7 +44,7 @@ public class CustomAuthenticationSuccessHandler implements AuthenticationSuccess
 		
 		Set<String> roles = AuthorityUtils.authorityListToSet(authentication.getAuthorities());
         if (roles.contains("ROLE_USUARIO")) {
-        	Usuario authUser = (Usuario) usuarioServiceImpl.getByEmail(email);
+        	Usuario authUser = (Usuario) usuarioServiceImpl.buscarPorEmail(email);
     		
             session.setAttribute("usuario", authUser);  
             session.setAttribute("authorities", authentication.getAuthorities());  

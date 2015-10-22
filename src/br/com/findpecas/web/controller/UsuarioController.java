@@ -7,7 +7,7 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class UsuarioController {
 	
-	private static final String CONTEXTO_USUARIO = "usuario/";
+	public static final String CONTEXTO_USUARIO = "usuario/";
 
 	@RequestMapping(CONTEXTO_USUARIO + "inicio-usuario")
 	public String inicioUsuario() {
@@ -25,12 +25,13 @@ public class UsuarioController {
 	public ModelAndView perfilDoUsuario() {
 		ModelAndView mav = new ModelAndView(CONTEXTO_USUARIO + "perfil-usuario");
 		
+		
 		return mav;
 	}
 	
 	@RequestMapping(CONTEXTO_USUARIO + "novo-veiculo")
 	public ModelAndView novoVeiculo() {
-		ModelAndView mav = new ModelAndView(CONTEXTO_USUARIO + "cadastro-veiculo-usuario");
+		ModelAndView mav = new ModelAndView(CONTEXTO_USUARIO + "novo-veiculo");
 		
 		return mav;
 	}

@@ -1,5 +1,7 @@
 package br.com.findpecas.service.impl;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -14,8 +16,46 @@ public class UsuarioServiceImpl implements IUsuarioService{
 	private IUsuarioDAO usuarioDao;
 	
 	@Override
-	public Usuario getByEmail(String email) {
+	public Usuario buscarPorEmail(String email) {
 		return usuarioDao.buscarPorEmail(email);
 	}
+
+	@Override
+	public void adicionar(Usuario usuario) {
+	
+		
+	}
+
+	@Override
+	public void editar(Usuario usuario) {
+
+		
+	}
+
+	@Override
+	public Usuario buscarPorId(Integer id) {
+		
+		return null;
+	}
+
+	@Override
+	public void excluir(Usuario usuario) {
+		
+		
+	}
+
+	@Override
+	public List<Usuario> listar() {
+		
+		return null;
+	}
+
+	@Override
+	public List<Usuario> listarUsuariosDesativados() {
+		
+		return null;
+	}
+
+
 
 }

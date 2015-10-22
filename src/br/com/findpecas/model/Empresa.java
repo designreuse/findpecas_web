@@ -2,6 +2,7 @@ package br.com.findpecas.model;
 
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -37,14 +38,14 @@ public class Empresa  {
 	@OneToMany(mappedBy="empresa")
 	private List<Avaliacao> avaliacoes;
 
-	@OneToMany(mappedBy="empresa")
+	@OneToMany(mappedBy="empresa", cascade = CascadeType.ALL)
 	private List<Contato> contatos;
 
-	@OneToOne
+	@OneToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name="cod_user")
 	private User user;
 
-	@ManyToMany
+	@ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
 	@JoinTable(
 		name="EMPRESA_TIPO_VEICULO"
 		, joinColumns={
@@ -56,19 +57,19 @@ public class Empresa  {
 		)
 	private List<TipoVeiculo> tipoVeiculos;
 
-	@OneToMany(mappedBy="empresa")
+	@OneToMany(mappedBy="empresa", cascade = CascadeType.ALL)
 	private List<Endereco> enderecos;
 
-	@OneToMany(mappedBy="empresa")
+	@OneToMany(mappedBy="empresa", cascade = CascadeType.ALL)
 	private List<FormaPagamento> formaPagamentos;
 
-	@OneToOne(mappedBy="empresa")
+	@OneToOne(mappedBy="empresa", cascade = CascadeType.ALL)
 	private Logomarca logomarca;
 
 	@OneToMany(mappedBy="empresa")
 	private List<Orcamento> orcamentos;
 
-	@ManyToMany(mappedBy="empresas")
+	@ManyToMany(mappedBy="empresas", cascade = {CascadeType.PERSIST, CascadeType.MERGE})
 	private List<TipoNegocio> tipoNegocios;
 
 	public Empresa() {

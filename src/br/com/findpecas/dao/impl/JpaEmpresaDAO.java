@@ -9,7 +9,12 @@ import javax.persistence.TypedQuery;
 import org.springframework.stereotype.Repository;
 
 import br.com.findpecas.dao.IEmpresaDAO;
+import br.com.findpecas.model.Avaliacao;
+import br.com.findpecas.model.Cidade;
 import br.com.findpecas.model.Empresa;
+import br.com.findpecas.model.Estado;
+import br.com.findpecas.model.TipoNegocio;
+import br.com.findpecas.model.TipoVeiculo;
 import br.com.findpecas.model.Usuario;
 
 @Repository
@@ -53,5 +58,49 @@ public class JpaEmpresaDAO implements IEmpresaDAO {
 		return empresa;
 		
 	}
+
+	@Override
+	public List<Empresa> listarEmpresasPorEstado(Estado estado) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Empresa> listarEmpresasPorRegiao(String regiao) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Empresa> listarEmpresasPorCidade(Cidade cidade) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Empresa> listarEmpresasPorTipoDeNegocio(TipoNegocio tipoNegocio) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Empresa> listarEmpresasPorTipoDeVeiculo(TipoVeiculo tipoVeiculo) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Empresa> listarEmpresasPorAvaliacao(Avaliacao avaliacao) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Empresa> listarempresasDesativadas() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
 
 }

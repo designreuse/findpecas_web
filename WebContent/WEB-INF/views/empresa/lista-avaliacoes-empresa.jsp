@@ -1,3 +1,6 @@
+<%@ page language="java" contentType="text/html; charset=utf-8"
+    pageEncoding="utf-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 
@@ -6,7 +9,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Find Pe�as | Cadastro Empresa</title>
+    <title>Find Peças | Avaliações</title>
 
     <link href="<c:url value="/resources/css/bootstrap.min.css"/>" rel="stylesheet">
     <link href="<c:url value="/resources/font-awesome/css/font-awesome.css"/>" rel="stylesheet">
@@ -30,43 +33,38 @@
                 <li class="nav-header">
                     <div class="dropdown profile-element"> 
                         <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-                            <span class="clear"> <span class="block m-t-xs"> <strong class="font-bold">${usuario.nome}</strong>
+                            <span class="clear"> <span class="block m-t-xs"> <strong class="font-bold">${empresa.nome}</strong>
                              </span> <span class="text-muted text-xs block">Administrador <b class="caret"></b></span> </span> </a>
                         <ul class="dropdown-menu animated fadeInRight m-t-xs">
                             <li><a href="profile.html">Perfil</a></li>
-                            <li><a href="contacts.html">Configurações</a></li>
+                            <li><a href="contacts.html">ConfiguraÃ§Ãµes</a></li>
                             <li><a href="mailbox.html">Mailbox</a></li>
                             <li class="divider"></li>
                             <li><a href="login.html">Sair</a></li>
                         </ul>
                     </div>
                     <div class="logo-element">
-                        IN+
+                        FP
                     </div>
                 </li>
                 <li>
-                    <a href="index.html"><i class="fa fa-th-large"></i> <span class="nav-label">Cadastro</span> <span class="fa arrow"></span></a>
+                    <a href="<%= request.getContextPath() + "/empresa/inicio-empresa" %>"><i class="fa fa-home"></i> <span class="nav-label">Início</span></a>
+                </li>
+				<li>
+                    <a href="<%= request.getContextPath() + "/empresa/perfil-empresa" %>"><i class="fa fa-cog"></i> <span class="nav-label">Perfil</span></a>
+                </li>
+				<li>
+                    <a href="<%= request.getContextPath() + "/empresa/buscas-usuarios" %>"><i class="fa fa-search"></i> <span class="nav-label">Buscas</span></a>
+                </li>
+				<li>
+                    <a href="#"><i class="fa fa-usd"></i> <span class="nav-label">Orçamentos</span><span class="fa arrow"></span></a>
                     <ul class="nav nav-second-level collapse">
-                        <li><a href="index.html">Dashboard v.1</a></li>
-                        <li><a href="dashboard_2.html">Dashboard v.2</a></li>
-                        <li><a href="dashboard_3.html">Dashboard v.3</a></li>
-                        <li><a href="dashboard_4_1.html">Dashboard v.4</a></li>
+                        <li><a href="<%= request.getContextPath() + "/empresa/orcamentos-realizados" %>">Realizados</a></li>
+                        <li><a href="<%= request.getContextPath() + "/empresa/orcamentos-aprovados" %>">Aprovados</a></li>
                     </ul>
                 </li>
-                <li>
-                    <a href="layouts.html"><i class="fa fa-diamond"></i> <span class="nav-label">Layouts</span></a>
-                </li>
-                <li>
-                    <a href="#"><i class="fa fa-bar-chart-o"></i> <span class="nav-label">Graphs</span><span class="fa arrow"></span></a>
-                    <ul class="nav nav-second-level collapse">
-                        <li><a href="graph_flot.html">Flot Charts</a></li>
-                        <li><a href="graph_morris.html">Morris.js Charts</a></li>
-                        <li><a href="graph_rickshaw.html">Rickshaw Charts</a></li>
-                        <li><a href="graph_chartjs.html">Chart.js</a></li>
-                        <li><a href="graph_chartist.html">Chartist</a></li>
-                        <li><a href="graph_peity.html">Peity Charts</a></li>
-                        <li><a href="graph_sparkline.html">Sparkline Charts</a></li>
-                    </ul>
+				<li class = "active">
+                    <a href="<%= request.getContextPath() + "/empresa/avaliacoes-recebidas" %>"><i class="fa fa-line-chart"></i> <span class="nav-label">Avaliações</span></a>
                 </li>
             </ul>
 
@@ -81,11 +79,7 @@
         </div>
             <ul class="nav navbar-top-links navbar-right">
                 <li>
-                    <span class="m-r-sm text-muted welcome-message">Bem-vindo ao Find Peças.</span>
-                </li>
-              
-                <li>
-                    <a href="login.html">
+                    <a href="<%= request.getContextPath() + "/logout" %>">
                         <i class="fa fa-sign-out"></i> Sair
                     </a>
                 </li>
@@ -95,13 +89,13 @@
         </div>
             <div class="row wrapper border-bottom white-bg page-heading">
                 <div class="col-lg-10">
-                    <h2>Cadastro Empresa</h2>
+                    <h2>Avaliações</h2>
                     <ol class="breadcrumb">
                         <li>
-                            <a href="index.html">Home</a>
+                            <a href="<%= request.getContextPath() + "/empresa/inicio-empresa" %>">Início</a>
                         </li>
                         <li class="active">
-                            <strong>Cadastro Empresa</strong>
+                            <strong>Avaliações</strong>
                         </li>
                     </ol>
                 </div>
@@ -121,7 +115,7 @@
                                 </div>
                                 <div class="hr-line-dashed"></div>
 								
-								<div class="form-group"><label class="col-sm-2 control-label">Tipo de veículo</label>
+								<div class="form-group"><label class="col-sm-2 control-label">Tipo de veÃ­culo</label>
                                     <div class="col-sm-2">
 										<select class="form-control m-b" name="account">
 											<option>option 1</option>
@@ -149,7 +143,7 @@
                                 </div>
                                 <div class="hr-line-dashed"></div>
 								
-                               <div class="form-group"><label class="col-sm-2 control-label">Endereço</label>
+                               <div class="form-group"><label class="col-sm-2 control-label">EndereÃ§o</label>
 
                                     <div class="col-sm-4"><input type="text" class="form-control"></div>
                                 </div>
@@ -457,7 +451,7 @@
             min: -50,
             max: 50,
             from: 0,
-            postfix: "°",
+            postfix: "Â°",
             prettify: false,
             hasGrid: true
         });

@@ -9,6 +9,8 @@ import javax.persistence.TypedQuery;
 import org.springframework.stereotype.Repository;
 
 import br.com.findpecas.dao.IUsuarioDAO;
+import br.com.findpecas.model.Cidade;
+import br.com.findpecas.model.Estado;
 import br.com.findpecas.model.Usuario;
 
 @Repository
@@ -68,6 +70,32 @@ public class JpaUsuarioDAO implements IUsuarioDAO{
 		return usuario;
 		
 	}
+
+	@Override
+	public List<Usuario> listarUsuariosDesativados() {
+		
+		return null;
+	}
+
+	@Override
+	public List<Usuario> listarUsuariosPorEstado(Estado estado) {
+	
+		return null;
+	}
+
+	@Override
+	public List<Usuario> listarUsuariosPorRegiao(String regiao) {
+		
+		return null;
+	}
+
+	@Override
+	public List<Usuario> listarUsuariosPorCidade(Cidade cidade) { 
+		
+		return null;
+	}
+
+	
 	
 
 }

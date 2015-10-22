@@ -1,3 +1,6 @@
+<%@ page language="java" contentType="text/html; charset=utf-8"
+    pageEncoding="utf-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 
@@ -6,7 +9,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Find Pe�as | Perfil</title>
+    <title>Find Peças | Perfil</title>
 
     <link href="<c:url value="/resources/css/bootstrap.min.css"/>" rel="stylesheet">
     <link href="<c:url value="/resources/font-awesome/css/font-awesome.css"/>" rel="stylesheet">
@@ -42,7 +45,7 @@
                              </span> <span class="text-muted text-xs block">Administrador <b class="caret"></b></span> </span> </a>
                         <ul class="dropdown-menu animated fadeInRight m-t-xs">
                             <li><a href="profile.html">Perfil</a></li>
-                            <li><a href="contacts.html">Configurações</a></li>
+                            <li><a href="contacts.html">ConfiguraÃ§Ãµes</a></li>
                             <li><a href="mailbox.html">Mailbox</a></li>
                             <li class="divider"></li>
                             <li><a href="login.html">Sair</a></li>
@@ -53,7 +56,7 @@
                     </div>
                 </li>
                <li>
-                    <a href="layouts.html"><i class="fa fa-home"></i> <span class="nav-label">Início</span></a>
+                    <a href="layouts.html"><i class="fa fa-home"></i> <span class="nav-label">InÃ­cio</span></a>
                 </li>
 				<li class = "active">
                     <a href="layouts.html"><i class="fa fa-cog"></i> <span class="nav-label">Perfil</span></a>
@@ -62,14 +65,14 @@
                     <a href="layouts.html"><i class="fa fa-search"></i> <span class="nav-label">Buscas</span></a>
                 </li>
 				<li>
-                    <a href="#"><i class="fa fa-usd"></i> <span class="nav-label">Orçamentos</span><span class="fa arrow"></span></a>
+                    <a href="#"><i class="fa fa-usd"></i> <span class="nav-label">OrÃ§amentos</span><span class="fa arrow"></span></a>
                     <ul class="nav nav-second-level collapse">
                         <li><a href="graph_flot.html">Realizados</a></li>
                         <li><a href="graph_morris.html">Aprovados</a></li>
                     </ul>
                 </li>
 				<li>
-                    <a href="layouts.html"><i class="fa fa-line-chart"></i> <span class="nav-label">Avaliações</span></a>
+                    <a href="layouts.html"><i class="fa fa-line-chart"></i> <span class="nav-label">AvaliaÃ§Ãµes</span></a>
                 </li>
                
             </ul>
@@ -85,7 +88,7 @@
         </div>
             <ul class="nav navbar-top-links navbar-right">
                 <li>
-                    <span class="m-r-sm text-muted welcome-message">Bem Vindo ao Find Peças.</span>
+                    <span class="m-r-sm text-muted welcome-message">Bem Vindo ao Find PeÃ§as.</span>
                 </li>
                 <li>
                     <a href="login.html">
@@ -104,7 +107,7 @@
                             <a href="index.html">Home</a>
                         </li>
                         <li class="active">
-                            <strong>Cadastro Usuário</strong>
+                            <strong>Cadastro UsuÃ¡rio</strong>
                         </li>
                     </ol>
                 </div>
@@ -466,7 +469,7 @@
             min: -50,
             max: 50,
             from: 0,
-            postfix: "°",
+            postfix: "Â°",
             prettify: false,
             hasGrid: true
         });

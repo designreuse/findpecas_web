@@ -29,9 +29,7 @@
         <div class="sidebar-collapse">
             <ul class="nav metismenu" id="side-menu">
                 <li class="nav-header">
-                    <div class="dropdown profile-element"> <span>
-                            <img alt="image" class="img-circle" src="img/profile_small.jpg" />
-                             </span>
+                    <div class="dropdown profile-element"> 
                         <a data-toggle="dropdown" class="dropdown-toggle" href="#">
                             <span class="clear"> <span class="block m-t-xs"> <strong class="font-bold">Usuario</strong>
                              </span> <span class="text-muted text-xs block">Art Director <b class="caret"></b></span> </span> </a>
@@ -47,28 +45,28 @@
                         FP
                     </div>
                 </li>
-                <li >
-                    <a href="layouts.html"><i class="fa fa-home"></i> <span class="nav-label">InÃ­cio</span></a>
+                <li>
+                    <a href="<%= request.getContextPath() + "/usuario/inicio-usuario" %>"><i class="fa fa-home"></i> <span class="nav-label">Início</span></a>
                 </li>
                 <li>
-                    <a href="layouts.html"><i class="fa fa-cog"></i> <span class="nav-label">Perfil</span></a>
+                    <a href="<%= request.getContextPath() + "/usuario/perfil" %>"><i class="fa fa-cog"></i> <span class="nav-label">Perfil</span></a>
                 </li>
                 <li>
-                    <a href="#"><i class="fa fa-car"></i> <span class="nav-label">VeÃ­culos</span><span class="fa arrow"></span></a>
+                    <a href="#"><i class="fa fa-car"></i> <span class="nav-label">Veículos</span><span class="fa arrow"></span></a>
                     <ul class="nav nav-second-level collapse">
-                        <li><a href="graph_flot.html">Novo veÃ­culo</a></li>
-                        <li><a href="graph_morris.html">Meus veÃ­culos</a></li>
+                        <li><a href="<%= request.getContextPath() + "/usuario/novo-veiculo" %>">Novo veículo</a></li>
+                        <li><a href="<%= request.getContextPath() + "/usuario/veiculos" %>">Meus veículos</a></li>
                     </ul>
                 </li>
 				<li class = "active">
-                    <a href="index.html"><i class="fa fa-search"></i> <span class="nav-label">Buscas</span> <span class="fa arrow"></span></a>
+                    <a href="#"><i class="fa fa-search"></i> <span class="nav-label">Buscas</span> <span class="fa arrow"></span></a>
                     <ul class="nav nav-second-level collapse">
-                        <li class = "active"><a href="index.html">Nova busca</a></li>
-                        <li><a href="dashboard_2.html">Minhas buscas</a></li>
+                        <li class = "active"><a href="<%= request.getContextPath() + "/usuario/nova-busca" %>">Nova busca</a></li>
+                        <li><a href="<%= request.getContextPath() + "/usuario/buscas" %>">Minhas buscas</a></li>
                     </ul>
                 </li>
 				<li>
-                    <a href="layouts.html"><i class="fa fa-usd"></i> <span class="nav-label">OrÃ§amentos Aprovados</span></a>
+                    <a href="<%= request.getContextPath() + "/usuario/orcamentos-aprovados" %>"><i class="fa fa-usd"></i> <span class="nav-label">Orçamentos Aprovados</span></a>
 					
                 </li>
             </ul>
@@ -91,8 +89,8 @@
                 
             
                 <li>
-                    <a href="login.html">
-                        <i class="fa fa-sign-out"></i> Log out
+                    <a href="<%= request.getContextPath() + "/logout" %>">
+                        <i class="fa fa-sign-out"></i> Sair
                     </a>
                 </li>
             </ul>
@@ -104,10 +102,7 @@
                     <h2>Nova Busca</h2>
                     <ol class="breadcrumb">
                         <li>
-                            <a href="index.html">Home</a>
-                        </li>
-                        <li>
-                            <a>Forms</a>
+                            <a href="<%= request.getContextPath() + "/usuario/inicio-usuario" %>">Início</a>
                         </li>
                         <li class="active">
                             <strong>Nova Busca</strong>

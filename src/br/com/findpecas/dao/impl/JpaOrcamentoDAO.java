@@ -8,7 +8,10 @@ import javax.persistence.PersistenceContext;
 import org.springframework.stereotype.Repository;
 
 import br.com.findpecas.dao.IOrcamentoDAO;
+import br.com.findpecas.model.Empresa;
 import br.com.findpecas.model.Orcamento;
+import br.com.findpecas.model.Usuario;
+import br.com.findpecas.model.Veiculo;
 
 @Repository
 public class JpaOrcamentoDAO implements  IOrcamentoDAO{
@@ -37,9 +40,32 @@ public class JpaOrcamentoDAO implements  IOrcamentoDAO{
 	}
 
 	@Override
-	public void excluir(Orcamento orcamento) {
-		//Orcamento orcamentoARemover = buscarPorId(orcamento.getCodigo());
-	    //manager.remove(orcamentoARemover);
+	public void excluir(Orcamento orcamento) {}
+
+	@Override
+	public List<Orcamento> listarOrcamentosPorEmpresa(Empresa empresa) {
+		
+		return null;
 	}
+
+	@Override
+	public List<Orcamento> listarOrcamentosPorVeiculo(Veiculo veiculo) {
+
+		return null;
+	}
+
+	@Override
+	public List<Orcamento> listarOrcamentosAprovadosDoUsuario(Usuario usuario) {
+		
+		return null;
+	}
+
+	@Override
+	public List<Orcamento> listarOrcamentosAprovadosDaEmpresa(Empresa empresa) {
+		
+		return null;
+	}
+
+	
 
 }

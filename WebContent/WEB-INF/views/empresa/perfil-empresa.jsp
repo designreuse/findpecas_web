@@ -1,3 +1,6 @@
+<%@ page language="java" contentType="text/html; charset=utf-8"
+    pageEncoding="utf-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 
@@ -6,10 +9,23 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Find Pe�as | Perfil</title>
+    <title>Find Peças | Perfil</title>
 
     <link href="<c:url value="/resources/css/bootstrap.min.css"/>" rel="stylesheet">
     <link href="<c:url value="/resources/font-awesome/css/font-awesome.css"/>" rel="stylesheet">
+    <link href="<c:url value="/resources/css/plugins/iCheck/custom.css"/>" rel="stylesheet">
+    <script src="<c:url value="/resources/js/plugins/chosen/chosen.jquery.js"/>"></script>
+    <link href="<c:url value="/resources/css/plugins/colorpicker/bootstrap-colorpicker.min.css"/>" rel="stylesheet">
+    <link href="<c:url value="/resources/css/plugins/cropper/cropper.min.css"/>" rel="stylesheet">
+    <link href="<c:url value="/resources/css/plugins/switchery/switchery.css"/>" rel="stylesheet">
+    <link href="<c:url value="/resources/css/plugins/jasny/jasny-bootstrap.min.css"/>" rel="stylesheet">
+    <link href="<c:url value="/resources/css/plugins/nouslider/jquery.nouislider.css"/>" rel="stylesheet">
+    <link href="<c:url value="/resources/css/plugins/datapicker/datepicker3.css"/>" rel="stylesheet">
+    <link href="<c:url value="/resources/css/plugins/ionRangeSlider/ion.rangeSlider.css"/>" rel="stylesheet">
+    <link href="<c:url value="/resources/css/plugins/ionRangeSlider/ion.rangeSlider.skinFlat.css"/>" rel="stylesheet">
+    <link href="<c:url value="/resources/css/plugins/awesome-bootstrap-checkbox/awesome-bootstrap-checkbox.css"/>" rel="stylesheet">
+    <link href="<c:url value="/resources/css/plugins/clockpicker/clockpicker.css"/>" rel="stylesheet">
+    <link href="<c:url value="/resources/css/plugins/daterangepicker/daterangepicker-bs3.css"/>" rel="stylesheet">
     <link href="<c:url value="/resources/css/animate.css"/>" rel="stylesheet">
     <link href="<c:url value="/resources/css/style.css"/>" rel="stylesheet">
 
@@ -23,11 +39,9 @@
         <div class="sidebar-collapse">
             <ul class="nav metismenu" id="side-menu">
                 <li class="nav-header">
-                    <div class="dropdown profile-element"> <span>
-                            <img alt="image" class="img-circle" src="img/profile_small.jpg" />
-                             </span>
+                    <div class="dropdown profile-element"> 
                         <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-                            <span class="clear"> <span class="block m-t-xs"> <strong class="font-bold">David Williams</strong>
+                            <span class="clear"> <span class="block m-t-xs"> <strong class="font-bold">${empresa.nome}</strong>
                              </span> <span class="text-muted text-xs block">Art Director <b class="caret"></b></span> </span> </a>
                         <ul class="dropdown-menu animated fadeInRight m-t-xs">
                             <li><a href="profile.html">Profile</a></li>
@@ -42,23 +56,23 @@
                     </div>
                 </li>
 				<li>
-                    <a href="layouts.html"><i class="fa fa-home"></i> <span class="nav-label">Início</span></a>
+                    <a href="<%= request.getContextPath() + "/empresa/inicio-empresa" %>"><i class="fa fa-home"></i> <span class="nav-label">Início</span></a>
                 </li>
 				<li class = "active">
-                    <a href="layouts.html"><i class="fa fa-cog"></i> <span class="nav-label">Perfil</span></a>
+                    <a href="<%= request.getContextPath() + "/empresa/perfil-empresa" %>"><i class="fa fa-cog"></i> <span class="nav-label">Perfil</span></a>
                 </li>
 				<li>
-                    <a href="layouts.html"><i class="fa fa-search"></i> <span class="nav-label">Buscas</span></a>
+                    <a href="<%= request.getContextPath() + "/empresa/buscas-usuarios" %>"><i class="fa fa-search"></i> <span class="nav-label">Buscas</span></a>
                 </li>
 				<li>
                     <a href="#"><i class="fa fa-usd"></i> <span class="nav-label">Orçamentos</span><span class="fa arrow"></span></a>
                     <ul class="nav nav-second-level collapse">
-                        <li><a href="graph_flot.html">Realizados</a></li>
-                        <li><a href="graph_morris.html">Aprovados</a></li>
+                        <li><a href="<%= request.getContextPath() + "/empresa/orcamentos-realizados" %>">Realizados</a></li>
+                        <li><a href="<%= request.getContextPath() + "/empresa/orcamentos-aprovados" %>">Aprovados</a></li>
                     </ul>
                 </li>
 				<li>
-                    <a href="layouts.html"><i class="fa fa-line-chart"></i> <span class="nav-label">Avaliações</span></a>
+                    <a href="<%= request.getContextPath() + "/empresa/avaliacoes-recebidas" %>"><i class="fa fa-line-chart"></i> <span class="nav-label">Avaliações</span></a>
                 </li>
             </ul>
 
@@ -73,12 +87,8 @@
         </div>
             <ul class="nav navbar-top-links navbar-right">
                 <li>
-                    <span class="m-r-sm text-muted welcome-message">Bem-vindo ao Find Peças.</span>
-                </li>
-              
-                <li>
-                    <a href="login.html">
-                        <i class="fa fa-sign-out"></i> Log out
+                    <a href="<%= request.getContextPath() + "/logout" %>">
+                        <i class="fa fa-sign-out"></i> Sair
                     </a>
                 </li>
             </ul>
@@ -87,16 +97,13 @@
         </div>
             <div class="row wrapper border-bottom white-bg page-heading">
                 <div class="col-lg-10">
-                    <h2>Perfil da empresa</h2>
+                    <h2>Perfil</h2>
                     <ol class="breadcrumb">
                         <li>
-                            <a href="index.html">Home</a>
-                        </li>
-                        <li>
-                            <a>Extra Pages</a>
+                            <a href="<%= request.getContextPath() + "/empresa/inicio-empresa" %>">Sair</a>
                         </li>
                         <li class="active">
-                            <strong>Profile</strong>
+                            <strong>Perfil</strong>
                         </li>
                     </ol>
                 </div>

@@ -46,28 +46,28 @@
                         FP
                     </div>
                 </li>
-                <li >
-                    <a href="layouts.html"><i class="fa fa-home"></i> <span class="nav-label">InÃ­cio</span></a>
+                <li>
+                    <a href="<%= request.getContextPath() + "/usuario/inicio-usuario" %>"><i class="fa fa-home"></i> <span class="nav-label">Início</span></a>
                 </li>
                 <li>
-                    <a href="layouts.html"><i class="fa fa-cog"></i> <span class="nav-label">Perfil</span></a>
+                    <a href="<%= request.getContextPath() + "/usuario/perfil" %>"><i class="fa fa-cog"></i> <span class="nav-label">Perfil</span></a>
                 </li>
                 <li>
-                    <a href="#"><i class="fa fa-car"></i> <span class="nav-label">VeÃ­culos</span><span class="fa arrow"></span></a>
+                    <a href="#"><i class="fa fa-car"></i> <span class="nav-label">Veículos</span><span class="fa arrow"></span></a>
                     <ul class="nav nav-second-level collapse">
-                        <li><a href="graph_flot.html">Novo veÃ­culo</a></li>
-                        <li><a href="graph_morris.html">Meus veÃ­culos</a></li>
+                        <li><a href="<%= request.getContextPath() + "/usuario/novo-veiculo" %>">Novo veículo</a></li>
+                        <li><a href="<%= request.getContextPath() + "/usuario/veiculos" %>">Meus veículos</a></li>
                     </ul>
                 </li>
 				<li class = "active">
-                    <a href="index.html"><i class="fa fa-search"></i> <span class="nav-label">Buscas</span> <span class="fa arrow"></span></a>
+                    <a href="#"><i class="fa fa-search"></i> <span class="nav-label">Buscas</span> <span class="fa arrow"></span></a>
                     <ul class="nav nav-second-level collapse">
-                        <li><a href="index.html">Nova busca</a></li>
-                        <li class = "active"><a href="dashboard_2.html">Minhas buscas</a></li>
+                        <li><a href="<%= request.getContextPath() + "/usuario/nova-busca" %>">Nova busca</a></li>
+                        <li class = "active"><a href="<%= request.getContextPath() + "/usuario/buscas" %>">Minhas buscas</a></li>
                     </ul>
                 </li>
 				<li>
-                    <a href="layouts.html"><i class="fa fa-usd"></i> <span class="nav-label">OrÃ§amentos Aprovados</span></a>
+                    <a href="<%= request.getContextPath() + "/usuario/orcamentos-aprovados" %>"><i class="fa fa-usd"></i> <span class="nav-label">Orçamentos Aprovados</span></a>
 					
                 </li>
                 
@@ -85,7 +85,7 @@
             <ul class="nav navbar-top-links navbar-right">
                		
                 <li>
-                    <a href="login.html">
+                    <a href="<%= request.getContextPath() + "/logout" %>">
                         <i class="fa fa-sign-out"></i> Sair
                     </a>
                 </li>
@@ -98,11 +98,11 @@
                     <h2>Minhas buscas</h2>
                     <ol class="breadcrumb">
                         <li>
-                            <a href="index.html">InÃ­cio</a>
+                            <a href="<%= request.getContextPath() + "/usuario/inicio-usuario" %>">Início</a>
                         </li>
 
                         <li class="active">
-                            <strong>Buscas de usuÃ¡rios</strong>
+                            <strong>Minhas buscas</strong>
                         </li>
                     </ol>
                 </div>

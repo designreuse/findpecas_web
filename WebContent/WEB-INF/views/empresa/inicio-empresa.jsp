@@ -33,11 +33,11 @@
                 <li class="nav-header">
                     <div class="dropdown profile-element"> 
                         <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-                            <span class="clear"> <span class="block m-t-xs"> <strong class="font-bold">${usuario.nome}</strong>
+                            <span class="clear"> <span class="block m-t-xs"> <strong class="font-bold">${empresa.nome}</strong>
                              </span> <span class="text-muted text-xs block">Administrador <b class="caret"></b></span> </span> </a>
                         <ul class="dropdown-menu animated fadeInRight m-t-xs">
                             <li><a href="profile.html">Perfil</a></li>
-                            <li><a href="contacts.html">ConfiguraÃ§Ãµes</a></li>
+                            <li><a href="contacts.html">Configurações</a></li>
                             <li><a href="mailbox.html">Mailbox</a></li>
                             <li class="divider"></li>
                             <li><a href="<%= request.getContextPath() + "/logout" %>">Sair</a></li>
@@ -48,23 +48,23 @@
                     </div>
                 </li>
 				<li class = "active">
-                    <a href="layouts.html"><i class="fa fa-home"></i> <span class="nav-label">InÃ­cio</span></a>
+                    <a href="<%= request.getContextPath() + "/empresa/inicio-empresa" %>"><i class="fa fa-home"></i> <span class="nav-label">Início</span></a>
                 </li>
 				<li>
-                    <a href="layouts.html"><i class="fa fa-cog"></i> <span class="nav-label">Perfil</span></a>
+                    <a href="<%= request.getContextPath() + "/empresa/perfil-empresa" %>"><i class="fa fa-cog"></i> <span class="nav-label">Perfil</span></a>
                 </li>
 				<li>
-                    <a href="layouts.html"><i class="fa fa-search"></i> <span class="nav-label">Buscas</span></a>
+                    <a href="<%= request.getContextPath() + "/empresa/buscas-usuarios" %>"><i class="fa fa-search"></i> <span class="nav-label">Buscas</span></a>
                 </li>
 				<li>
-                    <a href="#"><i class="fa fa-usd"></i> <span class="nav-label">OrÃ§amentos</span><span class="fa arrow"></span></a>
+                    <a href="#"><i class="fa fa-usd"></i> <span class="nav-label">Orçamentos</span><span class="fa arrow"></span></a>
                     <ul class="nav nav-second-level collapse">
-                        <li><a href="graph_flot.html">Realizados</a></li>
-                        <li><a href="graph_morris.html">Aprovados</a></li>
+                        <li><a href="<%= request.getContextPath() + "/empresa/orcamentos-realizados" %>">Realizados</a></li>
+                        <li><a href="<%= request.getContextPath() + "/empresa/orcamentos-aprovados" %>">Aprovados</a></li>
                     </ul>
                 </li>
 				<li>
-                    <a href="layouts.html"><i class="fa fa-line-chart"></i> <span class="nav-label">AvaliaÃ§Ãµes</span></a>
+                    <a href="<%= request.getContextPath() + "/empresa/avaliacoes-recebidas" %>"><i class="fa fa-line-chart"></i> <span class="nav-label">Avaliações</span></a>
                 </li>
             </ul>
 

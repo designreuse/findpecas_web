@@ -21,6 +21,13 @@ public class EmpresaController {
 		return mav;
 	}
 	
+	@RequestMapping(CONTEXTO_EMPRESA + "editar-perfil")
+	public ModelAndView editarPerfilEmpresa() {
+		ModelAndView mav = new ModelAndView(CONTEXTO_EMPRESA + "editar-perfil-empresa");
+		
+		return mav;
+	}
+	
 	@RequestMapping(CONTEXTO_EMPRESA + "orcamentos-realizados")
 	public ModelAndView orcamentosRealizados() {
 		ModelAndView mav = new ModelAndView(CONTEXTO_EMPRESA + "orcamentos-realizados");
@@ -42,7 +49,7 @@ public class EmpresaController {
 		return mav;
 	}
 	
-	@RequestMapping(CONTEXTO_EMPRESA + "")
+	@RequestMapping(CONTEXTO_EMPRESA + "avaliacoes-recebidas")
 	public ModelAndView avaliacoesRecebidas() {
 		ModelAndView mav = new ModelAndView(CONTEXTO_EMPRESA + "avaliacoes-recebidas");
 		
@@ -55,5 +62,7 @@ public class EmpresaController {
 		
 		return mav;
 	}
+	
+	
 
 }
