@@ -117,95 +117,53 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="ibox float-e-margins">
-       
-                        <div class="ibox-content">
-							<input type="text" class="form-control input-sm m-b-xs" id="filtro_empresa"
-                                   placeholder="Escreva aqui para filtrar sua pesquisa">
-                            <table class="footable table table-stripped toggle-arrow-tiny" data-page-size="10" data-filter=#filtro_empresa>
-                                <thead>
-                                <tr>
-
-									<th></th>
-                                    <th data-toggle="true">Item</th>
-                                    <th>Tipo de veÃ­culo</th>
-                                    <th>Estado</th>
-									<th>Cidade</th>
-									
-                                    <th data-hide="all">Nome usuÃ¡rio</th>
-                                    <th data-hide="all">E-mail</th>
-									<th data-hide="all">Fabricante</th>
-									<th data-hide="all">Modelo</th>
-									<th data-hide="all">Ano do veÃ­culo</th>
-									<th data-hide="all">Data de publicaÃ§Ã£o</th>
-                                    <th data-hide="all">ObservaÃ§Ã£o</th>
-                                    
-                                </tr>
-                                </thead>
-                                <tbody>
-                                <tr>
-									<td><input type="radio"   class="i-checks" name="input[]"></td>
-                                    <td>Embreagem</td>
-                                    <td>Carro</td>
-                                    <td>Pernambuco</td>
-                                    <td>Olinda</td>
-                                    <td><span class="pie">Thiago  Henrique</span></td>
-                                    <td>thiagonascimento95@hotmail.com</td>
-									<td>Fiat</td>
-									<td>Palio</td>
-									<td>2010</td>
-									<td>29/08/2015</td>
-									<td>Preciso de uma embreagem para um carro do tipo tal e do ano mil novecentos e bolinha</td>
-                                </tr>
-                                <tr>
-									<td><input type="radio"   class="i-checks" name="input[]"></td>
-                                    <td>Correia</td>
-                                    <td>Carro</td>
-                                    <td>Pernambuco</td>
-                                    <td>Recife</td>
-                                    <td><span class="pie">Ana Maria</span></td>
-                                    <td>thiagonascimento95@hotmail.com</td>
-									<td>Chevrolet</td>
-									<td>Celta</td>
-									<td>2012</td>
-									<td>29/08/2015</td>
-									<td>Preciso de uma embreagem para um carro do tipo tal e do ano mil novecentos e bolinha</td>
-                                </tr>
-                                <tr>
-									<td><input type="radio"   class="i-checks" name="input[]"></td>
-                                    <td>Kit de peÃ§as para rodas e jantes</td>
-                                    <td>Carro</td>
-                                    <td>Pernambuco</td>
-                                    <td>Recife</td>
-                                    <td><span class="pie">Lucas Bomfim</span></td>
-                                    <td>thiagonascimento95@hotmail.com</td>
-									<td>Ford</td>
-									<td>Ka</td>
-									<td>2011</td>
-									<td>29/08/2015</td>
-									<td>Preciso de uma embreagem para um carro do tipo tal e do ano mil novecentos e bolinha</td>
-                                </tr>
-                               
-                                </tbody>
-                                <tfoot>
-                                <tr>
-                                    <td colspan="5">
-                                        <ul class="pagination pull-right"></ul>
-                                    </td>
-                                </tr>
-								<tr>
-								<td colspan="5"  align="center">
-									<button class="btn btn-white" type="submit">Voltar</button>
-									<button class="btn btn-primary" type="submit">Detalhar</button>
-									<button class="btn btn-primary" type="submit">Enviar OrÃ§amento</button>
-									</td>
-								</tr>
-								
-								
-                                </tfoot>
-                            </table>
-                        </div>
-						
-						
+                    	<c:forEach items="${veiculos}" var="veiculo">
+	                        <div class="ibox-content">
+	                            <div class="row">
+	                                <div class="col-lg-12">
+	                                    <div class="m-b-md">
+	                                        <a href="#" class="btn btn-white btn-xs pull-right">Editar veículo</a>
+	                                        <h2>${veiculo.modeloVeiculo.nome}</h2>
+	                                    </div>
+	                                    <dl class="dl-horizontal">
+	                                        <dt>Status:</dt> <dd><span class="label label-primary">Active</span></dd>
+	                                    </dl>
+	                                </div>
+	                            </div>
+	                            <div class="row">
+	                                <div class="col-lg-5">
+	                                    <dl class="dl-horizontal">
+	
+	                                        <dt>Created by:</dt> <dd>Alex Smith</dd>
+	                                        <dt>Messages:</dt> <dd>  162</dd>
+	                                        <dt>Client:</dt> <dd><a href="#" class="text-navy"> Zender Company</a> </dd>
+	                                        <dt>Version:</dt> <dd> 	v1.4.2 </dd>
+	                                    </dl>
+	                                </div>
+	                                <div class="col-lg-7" id="cluster_info">
+	                                    <dl class="dl-horizontal" >
+	
+	                                        <dt>Last Updated:</dt> <dd>16.08.2014 12:15:57</dd>
+	                                        <dt>Created:</dt> <dd> 	10.07.2014 23:36:57 </dd>
+	                                        <dt>Participants:</dt>
+	                                        <dd class="project-people">
+	                                        <a href=""><img alt="image" class="img-circle" src="img/a3.jpg"></a>
+	                                        <a href=""><img alt="image" class="img-circle" src="img/a1.jpg"></a>
+	                                        <a href=""><img alt="image" class="img-circle" src="img/a2.jpg"></a>
+	                                        <a href=""><img alt="image" class="img-circle" src="img/a4.jpg"></a>
+	                                        <a href=""><img alt="image" class="img-circle" src="img/a5.jpg"></a>
+	                                        </dd>
+	                                    </dl>
+	                                </div>
+	                                <div class="col-sm-4 col-sm-offset-2">
+                                        <button class="btn btn-primary" type="submit">Nova busca</button>
+                                        <button class="btn btn-primary" type="submit">Ver buscas</button>
+                                        <button class="btn btn-primary" type="submit">Editar</button>
+                                        <button class="btn btn-white" type="reset">Excluir</button>
+                                	</div>
+	                            </div>
+	                        </div>
+                        </c:forEach>
                     </div>
                 </div>
             </div>

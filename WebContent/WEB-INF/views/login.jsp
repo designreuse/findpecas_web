@@ -31,7 +31,7 @@
             <h3>Bem-vindo(a) ao Find Peças</h3>
 
 			<c:if test="${not empty error}">
-				<div class="error">${error}</div>
+				<div class="error"><font color="#ff0000">${error}</font></div>
 			</c:if>
 		
 

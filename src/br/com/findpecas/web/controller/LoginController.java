@@ -20,21 +20,34 @@ import br.com.findpecas.model.Usuario;
 @Controller
 @Transactional
 public class LoginController {
+	// ATRIBUTOS ------------------
 	
 	@Autowired
 	private JpaUsuarioDAO dao;
 	
+	// MÉTODOS --------------------
 	
+	/**
+	 * 
+	 * @param login
+	 * @param senha
+	 * @param session
+	 * @return
+	 * @throws Exception
+	 */
 	@RequestMapping(value = "/logar", method = RequestMethod.POST)
 	public String logar(@RequestParam("login") String login, @RequestParam("senha") String senha, 
 			HttpSession session) throws Exception {
 		String retorno = null;
-
-		
 		
 		return retorno;
 	}
 	
+	/**
+	 * 
+	 * @param error
+	 * @return
+	 */
 	@RequestMapping("login")
 	public ModelAndView login(@RequestParam(value = "error", required = false) String error){
 		ModelAndView mav = new ModelAndView("login");

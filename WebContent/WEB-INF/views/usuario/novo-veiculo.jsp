@@ -113,44 +113,46 @@
                 <div class="col-lg-12">
                     <div class="ibox float-e-margins">
                         <div class="ibox-content">
-                            <form method="get" class="form-horizontal" action="<%= request.getContextPath() + "/usuario/adicionar-veiculo" %>">
+                            <form method="POST" class="form-horizontal" action="<%= request.getContextPath() + "/usuario/adicionar-veiculo" %>">
                                 <div class="form-group"><label class="col-sm-2 control-label">Tipo:</label>
                                     <div class="i-checks">
-                                    	<label> <input type="radio" value="option1" name="a"> <i></i>Carro</label>
-                                    	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                    	<label> <input type="radio"  value="option2" name="a"> <i></i> Moto </label>
+                                    	<label> <input type="radio" value="carro" name="tipoVeiculo" required> <i></i>Carro</label>
+                                    	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    	<label> <input type="radio"  value="moto" name="tipoVeiculo" required>Moto</label>
                                     </div>
                                 </div>
                                 <div class="hr-line-dashed"></div>
 								
 								<div class="form-group"><label class="col-sm-2 control-label">Fabricante:</label>
                                     <div class="col-sm-2">
-										<select data-placeholder="Escolha um estado..." class="form-control m-b" style="width:350px;" tabindex="2">
-											<option value="">Select</option>
-											<option value="${estado.nome}">${estado.nome}</option>
+										<select data-placeholder="Escolha um fabricante..." class="form-control m-b" style="width:350px;" tabindex="2" required>
+											<option value="">- Escolha uma opção -</option>
+											<c:forEach items="${fabricantes}" var="fabricante">
+												<option value="${fabricante.codigo}">${fabricante.nome}</option>
+											</c:forEach>
 										</select>
 									</div>
                                 </div>
                                 <div class="hr-line-dashed"></div>
                                <div class="form-group"><label class="col-sm-2 control-label">Modelo:</label>
                                     <div class="col-sm-2">
-                                    	<select data-placeholder="Escolha um estado..." class="form-control m-b" style="width:350px;" tabindex="2">
-											<option value="">Select</option>
-											<option value="${estado.nome}">${estado.nome}</option>
+                                    	<select data-placeholder="Escolha um modelo..." class="form-control m-b" style="width:350px;" tabindex="2" required>
+											<option value="">- Escolha uma opção -</option>
+											<c:forEach items="${modelos}" var="modelo">
+												<option value="${modelo.codigo}">${modelo.nome}</option>
+											</c:forEach>
 										</select>
                                     </div>
                                 </div>
                                 <div class="hr-line-dashed"></div>
-								<div class="form-group"><label class="col-sm-2 control-label">Ano:</label>
-									<div class="col-sm-2">
-										<div class="col-sm-6"><input type="text" class="form-control"></div>
-									</div>
-								</div>
+                                <div class="form-group"><label class="col-sm-2 control-label">Ano:</label>
+                                    <div class="col-sm-6"><input type="text" class="form-control" required></div>
+                                </div>
 								<div class="hr-line-dashed"></div>								
                                 <div class="form-group">
                                     <div class="col-sm-4 col-sm-offset-2">
-                                        <button class="btn btn-white" type="reset">Cancelar</button>
                                         <button class="btn btn-primary" type="submit">Salvar</button>
+                                        <a href=javascript:history.back(1)><button class="btn btn-white" type="reset">Cancelar</button></a>
                                     </div>
                                 </div>
                             </form>

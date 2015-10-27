@@ -192,9 +192,9 @@
                                 </tr>
 								<tr>
 								<td colspan="5"  align="center">
-									<button class="btn btn-white" type="submit">Voltar</button>
 									<button class="btn btn-primary" type="submit">Detalhar</button>
-									<button class="btn btn-primary" type="submit">Enviar OrÃ§amento</button>
+									<button class="btn btn-primary" type="submit">Editar</button>
+									<button class="btn btn-white" type="submit">Voltar</button>
 									</td>
 								</tr>
 								

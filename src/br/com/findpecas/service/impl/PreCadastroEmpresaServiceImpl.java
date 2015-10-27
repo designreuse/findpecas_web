@@ -4,17 +4,16 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import br.com.findpecas.dao.IOrcamentoDAO;
-import br.com.findpecas.service.IOrcamentoService;
+import br.com.findpecas.dao.IPreCadastroEmpresaDAO;
 
-@Service("orcamentoServiceImpl")
+@Service("preCadastroEmoresaServiceImpl")
 @Transactional
-public class OrcamentoServiceImpl implements IOrcamentoService {
+public class PreCadastroEmpresaServiceImpl {
 	// ATRIBUTOS ------------------
 	
 	@Autowired
-	private IOrcamentoDAO orcamentoDao;
+	private IPreCadastroEmpresaDAO preCadastroEmpresaDao;
 	
-	// MÉTODOS --------------------
+	// MÉTODO --------------------
 
 }
