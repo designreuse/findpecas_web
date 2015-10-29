@@ -22,7 +22,7 @@ public class Veiculo  {
 	private Integer codigo;
 
 	@Column(name="ano_veiculo")
-	private int anoVeiculo;
+	private int ano;
 
 	@OneToMany(mappedBy="veiculo")
 	private List<Busca> buscas;
@@ -50,12 +50,12 @@ public class Veiculo  {
 		this.codigo = codigo;
 	}
 
-	public int getAnoVeiculo() {
-		return this.anoVeiculo;
+	public int getAno() {
+		return this.ano;
 	}
 
-	public void setAnoVeiculo(int anoVeiculo) {
-		this.anoVeiculo = anoVeiculo;
+	public void setAno(int ano) {
+		this.ano = ano;
 	}
 
 	public List<Busca> getBuscas() {

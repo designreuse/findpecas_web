@@ -47,29 +47,24 @@
                         IN+
                     </div>
                 </li>
-                <li>
-                    <a href="index.html"><i class="fa fa-search"></i> <span class="nav-label">Buscas</span> <span class="fa arrow"></span></a>
+                <li >
+                    <a href="<%= request.getContextPath() + "/empresa/inicio-empresa" %>"><i class="fa fa-home"></i> <span class="nav-label">Início</span></a>
+                </li>
+				<li>
+                    <a href="<%= request.getContextPath() + "/empresa/perfil-empresa" %>"><i class="fa fa-cog"></i> <span class="nav-label">Perfil</span></a>
+                </li>
+				<li class = "active">
+                    <a href="<%= request.getContextPath() + "/empresa/buscas-usuarios" %>"><i class="fa fa-search"></i> <span class="nav-label">Buscas</span></a>
+                </li>
+				<li>
+                    <a href="#"><i class="fa fa-usd"></i> <span class="nav-label">Orçamentos</span><span class="fa arrow"></span></a>
                     <ul class="nav nav-second-level collapse">
-                        <li><a href="index.html">Dashboard v.1</a></li>
-                        <li><a href="dashboard_2.html">Dashboard v.2</a></li>
-                        <li><a href="dashboard_3.html">Dashboard v.3</a></li>
-                        <li><a href="dashboard_4_1.html">Dashboard v.4</a></li>
+                        <li><a href="<%= request.getContextPath() + "/empresa/orcamentos-realizados" %>">Realizados</a></li>
+                        <li><a href="<%= request.getContextPath() + "/empresa/orcamentos-aprovados" %>">Aprovados</a></li>
                     </ul>
                 </li>
-                <li>
-                    <a href="layouts.html"><i class="fa fa-usd"></i> <span class="nav-label">Meus orÃ§amentos</span></a>
-                </li>
-                <li>
-                    <a href="#"><i class="fa fa-bar-chart-o"></i> <span class="nav-label">AvaliaÃ§Ãµes</span><span class="fa arrow"></span></a>
-                    <ul class="nav nav-second-level collapse">
-                        <li><a href="graph_flot.html">Flot Charts</a></li>
-                        <li><a href="graph_morris.html">Morris.js Charts</a></li>
-                        <li><a href="graph_rickshaw.html">Rickshaw Charts</a></li>
-                        <li><a href="graph_chartjs.html">Chart.js</a></li>
-                        <li><a href="graph_chartist.html">Chartist</a></li>
-                        <li><a href="graph_peity.html">Peity Charts</a></li>
-                        <li><a href="graph_sparkline.html">Sparkline Charts</a></li>
-                    </ul>
+				<li>
+                    <a href="<%= request.getContextPath() + "/empresa/avaliacoes-recebidas" %>"><i class="fa fa-line-chart"></i> <span class="nav-label">Avaliações</span></a>
                 </li>
             </ul>
 
@@ -84,11 +79,7 @@
         </div>
             <ul class="nav navbar-top-links navbar-right">
                 <li>
-                    <span class="m-r-sm text-muted welcome-message">Bem-vindo ao Find PeÃ§as.</span>
-                </li>
-              
-                <li>
-                    <a href="login.html">
+                    <a href="<%= request.getContextPath() + "/logout" %>">
                         <i class="fa fa-sign-out"></i> Sair
                     </a>
                 </li>
@@ -98,16 +89,16 @@
         </div>
             <div class="row wrapper border-bottom white-bg page-heading">
                 <div class="col-lg-10">
-                    <h2>Novo OrÃ§amento</h2>
+                    <h2>Novo Orçamento</h2>
                     <ol class="breadcrumb">
                         <li>
-                            <a href="index.html">Home</a>
+                            <a href="<%= request.getContextPath() + "/empresa/inicio-empresa" %>">Início</a>
                         </li>
 						<li>
                             <a href="#">Buscas</a>
                         </li>
                         <li class="active">
-                            <strong>Novo OrÃ§amento</strong>
+                            <strong>Novo Orçamento</strong>
                         </li>
                     </ol>
                 </div>

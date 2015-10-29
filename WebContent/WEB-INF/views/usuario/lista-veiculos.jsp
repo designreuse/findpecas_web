@@ -134,8 +134,8 @@
 	                                <div class="col-lg-5">
 	                                    <dl class="dl-horizontal">
 	
-	                                        <dt>Created by:</dt> <dd>Alex Smith</dd>
-	                                        <dt>Messages:</dt> <dd>  162</dd>
+	                                        <dt>Fabricante:</dt> <dd>${veiculo.modeloVeiculo.fabricante.nome}</dd>
+	                                        <dt>Ano:</dt> <dd>${veiculo.ano}</dd>
 	                                        <dt>Client:</dt> <dd><a href="#" class="text-navy"> Zender Company</a> </dd>
 	                                        <dt>Version:</dt> <dd> 	v1.4.2 </dd>
 	                                    </dl>
@@ -145,23 +145,21 @@
 	
 	                                        <dt>Last Updated:</dt> <dd>16.08.2014 12:15:57</dd>
 	                                        <dt>Created:</dt> <dd> 	10.07.2014 23:36:57 </dd>
-	                                        <dt>Participants:</dt>
-	                                        <dd class="project-people">
-	                                        <a href=""><img alt="image" class="img-circle" src="img/a3.jpg"></a>
-	                                        <a href=""><img alt="image" class="img-circle" src="img/a1.jpg"></a>
-	                                        <a href=""><img alt="image" class="img-circle" src="img/a2.jpg"></a>
-	                                        <a href=""><img alt="image" class="img-circle" src="img/a4.jpg"></a>
-	                                        <a href=""><img alt="image" class="img-circle" src="img/a5.jpg"></a>
-	                                        </dd>
 	                                    </dl>
 	                                </div>
-	                                <div class="col-sm-4 col-sm-offset-2">
-                                        <button class="btn btn-primary" type="submit">Nova busca</button>
-                                        <button class="btn btn-primary" type="submit">Ver buscas</button>
-                                        <button class="btn btn-primary" type="submit">Editar</button>
-                                        <button class="btn btn-white" type="reset">Excluir</button>
-                                	</div>
 	                            </div>
+	                            <div class="row">
+                                <div class="col-lg-12">
+                                   <div align="center" class="col-lg-12 ">
+                                		
+                                        <a href="<%= request.getContextPath() + "/usuario/nova-busca"%>"><button hidden="${veiculo}"  class="btn btn-primary" type="submit">Nova busca</button></a>
+                                        <a href="<%= request.getContextPath() + "/usuario/veiculo-buscas"%>"><button class="btn btn-primary" type="submit">Ver buscas</button></a>
+                                        <a href="<%= request.getContextPath() + "/usuario/editar-veiculo"%>"><button class="btn btn-primary" type="submit">Editar</button></a>
+                                        <a href="<%= request.getContextPath() + "/usuario/excluir-veiculo"%>"><button class="btn btn-white" type="submit">Excluir</button></a>
+                                	</div>
+                                    
+                                </div>
+                            </div>
 	                        </div>
                         </c:forEach>
                     </div>

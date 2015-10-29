@@ -100,7 +100,7 @@
                     <h2>Perfil</h2>
                     <ol class="breadcrumb">
                         <li>
-                            <a href="<%= request.getContextPath() + "/empresa/inicio-empresa" %>">Sair</a>
+                            <a href="<%= request.getContextPath() + "/empresa/inicio-empresa" %>">Início</a>
                         </li>
                         <li class="active">
                             <strong>Perfil</strong>

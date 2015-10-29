@@ -68,9 +68,7 @@
                 </li>
 				<li>
                     <a href="<%= request.getContextPath() + "/usuario/orcamentos-aprovados" %>"><i class="fa fa-usd"></i> <span class="nav-label">Orçamentos Aprovados</span></a>
-					
-                </li>
-                
+                </li>  
             </ul>
 
         </div>

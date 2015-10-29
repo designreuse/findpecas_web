@@ -9,7 +9,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Find Peças | Minhas buscas</title>
+    <title>Find Peças | Orçamentos aprovados</title>
 
     <link href="<c:url value="/resources/css/bootstrap.min.css"/>" rel="stylesheet">
     <link href="<c:url value="/resources/font-awesome/css/font-awesome.css"/>" rel="stylesheet">
@@ -61,14 +61,14 @@
                         <li><a href="<%= request.getContextPath() + "/usuario/veiculos" %>">Meus veículos</a></li>
                     </ul>
                 </li>
-				<li class = "active">
+				<li >
                     <a href="#"><i class="fa fa-search"></i> <span class="nav-label">Buscas</span> <span class="fa arrow"></span></a>
                     <ul class="nav nav-second-level collapse">
                         <li><a href="<%= request.getContextPath() + "/usuario/nova-busca" %>">Nova busca</a></li>
-                        <li class = "active"><a href="<%= request.getContextPath() + "/usuario/buscas" %>">Minhas buscas</a></li>
+                        <li class><a href="<%= request.getContextPath() + "/usuario/buscas" %>">Minhas buscas</a></li>
                     </ul>
                 </li>
-				<li>
+				<li class = "active">
                     <a href="<%= request.getContextPath() + "/usuario/orcamentos-aprovados" %>"><i class="fa fa-usd"></i> <span class="nav-label">Orçamentos Aprovados</span></a>
                 </li> 
                 
@@ -96,14 +96,14 @@
         </div>
             <div class="row wrapper border-bottom white-bg page-heading">
                 <div class="col-lg-10">
-                    <h2>Minhas buscas</h2>
+                    <h2>Orçamentos aprovados</h2>
                     <ol class="breadcrumb">
                         <li>
                             <a href="<%= request.getContextPath() + "/usuario/inicio-usuario" %>">Início</a>
                         </li>
 
                         <li class="active">
-                            <strong>Minhas buscas</strong>
+                            <strong>Orçamentos aprovados</strong>
                         </li>
                     </ol>
                 </div>
