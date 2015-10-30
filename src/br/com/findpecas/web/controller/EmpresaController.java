@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.servlet.ModelAndView;
 
 import br.com.findpecas.model.Empresa;
-import br.com.findpecas.model.Usuario;
 import br.com.findpecas.service.IEmpresaService;
 import br.com.findpecas.service.IFabricanteService;
 import br.com.findpecas.service.IModeloVeiculoService;

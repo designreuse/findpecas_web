@@ -1,12 +1,12 @@
-package br.com.findpecas.dao;
+package br.com.findpecas.service;
 
 import java.util.List;
 
 import br.com.findpecas.model.Cidade;
 import br.com.findpecas.model.Estado;
 
-public interface ICidadeDAO {
-
+public interface ICidadeService {
+	
 	/**
 	 * 
 	 * @param id
@@ -33,5 +33,5 @@ public interface ICidadeDAO {
 	 * @return
 	 */
 	List<Cidade> listarCidades();
-	
+
 }

@@ -10,7 +10,7 @@ import org.springframework.stereotype.Repository;
 
 import br.com.findpecas.dao.IFabricanteDAO;
 import br.com.findpecas.model.Fabricante;
-import br.com.findpecas.model.Usuario;
+import br.com.findpecas.model.TipoVeiculo;
 
 @Repository
 public class JpaFabricanteDAO implements IFabricanteDAO{
@@ -51,6 +51,19 @@ public class JpaFabricanteDAO implements IFabricanteDAO{
 		Fabricante fabricante = query.getSingleResult();
 		
 		return fabricante;
+	}
+
+	@Override
+	public List<Fabricante> listarPorTipoVeiculo(TipoVeiculo tipoVeiculo) {
+		Integer codigo = tipoVeiculo.getCodigo();
+		String consulta = "select f from Fabricante f where f.getTipoVeiculos().codigo = :codigo";
+		TypedQuery<Fabricante> query =
+		manager.createQuery(consulta, Fabricante.class);
+		query.setParameter("codigo", codigo);
+		
+		List<Fabricante> fabricantes = query.getResultList();
+		
+		return fabricantes;
 	}
 
 }

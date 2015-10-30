@@ -115,38 +115,34 @@
                         <div class="ibox-content">
                             <form method="POST" class="form-horizontal" action="<%= request.getContextPath() + "/usuario/adicionar-veiculo" %>">
                                 <div class="form-group"><label class="col-sm-2 control-label">Tipo:</label>
-                                    <div class="i-checks">
-                                    	<label> <input type="radio" value="carro" name="tipoVeiculo" required> <i></i>Carro</label>
-                                    	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                    	<label> <input type="radio"  value="moto" name="tipoVeiculo" required>Moto</label>
-                                    </div>
+                                    <div class="col-sm-2">
+	                                    <select id="tipoVeiculoSelect" onchange="carregarFabricantes()" data-placeholder="Escolha um tipo..." class="form-control m-b" style="width:350px;" tabindex="2" required>
+											<option value="">- Escolha uma opção -</option>
+											<c:forEach items="${tipos}" var="tipoVeiculo">
+												<option value="${tipoVeiculo.codigo}">${tipoVeiculo.descricao }</option>
+											</c:forEach>
+										</select>
+									</div>
                                 </div>
                                 <div class="hr-line-dashed"></div>
 								
 								<div class="form-group"><label class="col-sm-2 control-label">Fabricante:</label>
                                     <div class="col-sm-2">
-										<select data-placeholder="Escolha um fabricante..." class="form-control m-b" style="width:350px;" tabindex="2" required>
-											<option value="">- Escolha uma opção -</option>
-											<c:forEach items="${fabricantes}" var="fabricante">
-												<option value="${fabricante.codigo}">${fabricante.nome}</option>
-											</c:forEach>
+										<select id="fabricantesSelect" onchange="carregarModelos()" data-placeholder="Escolha um fabricante..." class="form-control m-b" style="width:350px;" tabindex="2" required>
+									
 										</select>
 									</div>
                                 </div>
                                 <div class="hr-line-dashed"></div>
                                <div class="form-group"><label class="col-sm-2 control-label">Modelo:</label>
                                     <div class="col-sm-2">
-                                    	<select data-placeholder="Escolha um modelo..." class="form-control m-b" style="width:350px;" tabindex="2" required>
-											<option value="">- Escolha uma opção -</option>
-											<c:forEach items="${modelos}" var="modelo">
-												<option value="${modelo.codigo}">${modelo.nome}</option>
-											</c:forEach>
+                                    	<select id="modelosSelect" data-placeholder="Escolha um modelo..." class="form-control m-b" style="width:350px;" tabindex="2" required>
 										</select>
                                     </div>
                                 </div>
                                 <div class="hr-line-dashed"></div>
                                 <div class="form-group"><label class="col-sm-2 control-label">Ano:</label>
-                                    <div class="col-sm-6"><input type="text" class="form-control" required></div>
+                                    <div class="col-sm-4"><input id="anoVeiculo" type="text" class="form-control" required></div>
                                 </div>
 								<div class="hr-line-dashed"></div>								
                                 <div class="form-group">
@@ -176,11 +172,14 @@
 
 
     <!-- Mainly scripts -->
-    <script src="<c:url value="/resources/js/jquery-2.1.1.js"/>"></script>
+    <script src="<c:url value="/resources/js/jquery-2.1.4.js"/>"></script>
+    <script src="<c:url value="/resources/js/jquery-2.1.4.min.js"/>"></script>
     <script src="<c:url value="/resources/js/bootstrap.min.js"/>"></script>
     <script src="<c:url value="/resources/js/plugins/metisMenu/jquery.metisMenu.js"/>"></script>
     <script src="<c:url value="/resources/js/plugins/slimscroll/jquery.slimscroll.min.js"/>"></script>
 
+	<script src="<c:url value="/resources/js/fabricante-modelo.js"/>"></script>
+	
     <!-- Custom and plugin javascript -->
     <script src="<c:url value="/resources/js/inspinia.js"/>"></script>
     <script src="<c:url value="/resources/js/plugins/pace/pace.min.js"/>"></script>

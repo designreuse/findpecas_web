@@ -4,15 +4,12 @@ import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-import javax.persistence.PersistenceContextType;
 import javax.persistence.TypedQuery;
 
 import org.springframework.stereotype.Repository;
 
 import br.com.findpecas.dao.IEstadoDAO;
-import br.com.findpecas.model.Cidade;
 import br.com.findpecas.model.Estado;
-import br.com.findpecas.model.Fabricante;
 
 @Repository
 public class JpaEstadoDAO implements IEstadoDAO {

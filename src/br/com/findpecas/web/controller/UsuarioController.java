@@ -2,33 +2,32 @@ package br.com.findpecas.web.controller;
 
 import java.util.List;
 
+import javax.annotation.security.RolesAllowed;
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.servlet.ModelAndView;
 
 import br.com.findpecas.dao.ICidadeDAO;
 import br.com.findpecas.dao.IEstadoDAO;
 import br.com.findpecas.model.Busca;
-import br.com.findpecas.model.Cidade;
 import br.com.findpecas.model.Estado;
 import br.com.findpecas.model.Fabricante;
 import br.com.findpecas.model.ModeloVeiculo;
 import br.com.findpecas.model.TipoNegocio;
+import br.com.findpecas.model.TipoVeiculo;
 import br.com.findpecas.model.Usuario;
 import br.com.findpecas.model.Veiculo;
 import br.com.findpecas.service.IFabricanteService;
 import br.com.findpecas.service.IModeloVeiculoService;
 import br.com.findpecas.service.ITipoNegocioService;
+import br.com.findpecas.service.ITipoVeiculoService;
 import br.com.findpecas.service.IUsuarioService;
 import br.com.findpecas.service.IVeiculoService;
 
@@ -57,6 +56,10 @@ public class UsuarioController {
 	@Autowired
 	@Qualifier("tipoNegocioServiceImpl")
 	private ITipoNegocioService tipoNegocioService;
+	
+	@Autowired
+	@Qualifier("tipoVeiculoServiceImpl")
+	private ITipoVeiculoService tipoVeiculoService;
 	
 	@Autowired
 	private ICidadeDAO cidadeDao;
@@ -125,9 +128,11 @@ public class UsuarioController {
 		ModelAndView mav = new ModelAndView(CONTEXTO_USUARIO + "novo-veiculo");
 		List<Fabricante> fabricantes = fabricanteService.listarFabricantes();
 		List<ModeloVeiculo> modelos = modeloVeiculoService.listarModeloVeiculos();
+		List<TipoVeiculo> tipos = tipoVeiculoService.listar();
 		
 		mav.addObject("fabricantes", fabricantes);
 		mav.addObject("modelos", modelos);
+		mav.addObject("tipos", tipos);
 		
 		return mav;
 	}
@@ -138,8 +143,9 @@ public class UsuarioController {
 	 * @param veiculo
 	 * @return
 	 */
+	@RolesAllowed({"ROLE_USUARIO"})
 	@RequestMapping(CONTEXTO_USUARIO + "adicionar-veiculo")
-	public String adicionarVeiculo(Veiculo veiculo) {
+	public String adicionarVeiculo(@RequestParam(value="anoVeiculo") String anoVeiculo) {
 	
 		
 		return "redirect:usuario/veiculos";
@@ -237,26 +243,5 @@ public class UsuarioController {
 		
 		return mav;
 	}
-
-	/**
-	 * 
-	 * @param estado
-	 * @param map
-	 * @return
-	 */
-	@ResponseBody  
-    @RequestMapping(value = "/cidadesPorEstado/{estado}")  
-    public List<Cidade> retornaCidades(@PathVariable Integer idEstado, ModelMap map) {  
-		Estado estado = estadoDao.buscarPorId(idEstado);
-        return cidadeDao.buscarPorEstado(estado);
-    }  
-	
-	/*
-	@RequestMapping("/url/para/a/action")  
-	public void getCidades(Integer idEstado) {  
-		Estado estado = estadoDao.buscarPorId(idEstado);
-	   List<Cidade> cidades = cidadeDao.buscarPorEstado(estado); // Carrega as cidades que estão nesse estado...  
-	   result.use(Results.json()).withoutRoot().from(cidades).serialize(); // Transforma a lista em JSON  
-	}*/
 	
 }

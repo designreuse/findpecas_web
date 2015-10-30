@@ -11,7 +11,6 @@ import org.springframework.stereotype.Repository;
 import br.com.findpecas.dao.ICidadeDAO;
 import br.com.findpecas.model.Cidade;
 import br.com.findpecas.model.Estado;
-import br.com.findpecas.model.Usuario;
 
 @Repository
 public class JpaCidadeDAO implements ICidadeDAO {

@@ -1,13 +1,14 @@
 function carregarCidades(estado){  
-                $.get('cidadesPorEstado/' + estado, function(resposta){  
-                    popularCidades(resposta);   
-                });   
-} 
-          
-function popularCidades(resposta){  
-    var str = "";  
-    for (var i = 0; i < resposta.length; i++){    
-        str = str + '<option value="'+resposta[i].codigo+'">'+resposta[i].nome+'</option>';    
-    }       
-    $('#cidadeSelect').html(str);    
+	$.getJSON(
+            "cidadesPorEstado", 
+            {idEstado: $('#estadosSelect').val()},
+            function(data) {
+                 var html = '';
+                 var len = data.length;
+                 for(var i=0; i<len; i++){
+                      html += '<option value="' + data[i].codigo + '">' + data[i].nome + '</option>';
+                  }
+                 $('#cidadesSelect').html(html);
+            }
+         );  
 } 

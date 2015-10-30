@@ -12,6 +12,9 @@ import javax.persistence.ManyToOne;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 @NamedQuery(name="Cidade.findAll", query="SELECT c FROM Cidade c")
 public class Cidade  {
@@ -27,8 +30,9 @@ public class Cidade  {
 
 	@ManyToOne
 	@JoinColumn(name="cod_estado")
+	@JsonBackReference
 	private Estado estado;
-
+ 
 	@OneToMany(mappedBy="cidade")
 	private List<Endereco> enderecos;
 
@@ -65,6 +69,7 @@ public class Cidade  {
 		this.uf = uf;
 	}
 
+	@JsonIgnore
 	public Estado getEstado() {
 		return this.estado;
 	}
@@ -73,6 +78,7 @@ public class Cidade  {
 		this.estado = estado;
 	}
 
+	@JsonIgnore
 	public List<Endereco> getEnderecos() {
 		return this.enderecos;
 	}
@@ -95,6 +101,7 @@ public class Cidade  {
 		return endereco;
 	}
 
+	@JsonIgnore
 	public List<PreCadastroEmpresa> getPreCadastroEmpresas() {
 		return this.preCadastroEmpresas;
 	}
@@ -117,6 +124,7 @@ public class Cidade  {
 		return preCadastroEmpresa;
 	}
 
+	@JsonIgnore
 	public List<Usuario> getUsuarios() {
 		return this.usuarios;
 	}

@@ -21,7 +21,6 @@
 	<link href="<c:url value="/resources/css/plugins/chosen/chosen.css"/>" rel="stylesheet">
 	
     <link href="<c:url value="/resources/css/plugins/awesome-bootstrap-checkbox/awesome-bootstrap-checkbox.css"/>" rel="stylesheet">
-   
 
 </head>
 
@@ -140,7 +139,7 @@
 								
 								<div class="form-group"><label class="col-sm-2 control-label">Estado</label>
 									<div class="col-sm-2">
-										<select id="estadosSelect" onchange="carregarCidades(this.value)" data-placeholder="Escolha um estado..." class="chosen-select" style="width:350px;" tabindex="2">
+										<select id="estadosSelect" onchange="carregarCidades()" data-placeholder="Escolha um estado..." class="chosen-select" style="width:350px;" tabindex="2">
 											<option value="">- Escolha uma opção -</option>
 											<c:forEach items="${estados}" var="estado">
 												<option value="${estado.codigo}">${estado.nome}</option>
@@ -152,7 +151,7 @@
 								
 								<div class="form-group"><label class="col-sm-2 control-label">Cidade</label>
 									<div class="col-sm-2">	
-										<select id="cidadeSelect" data-placeholder="Escolha um estado..." class="chosen-select" style="width:350px;" tabindex="2">
+										<select id="cidadesSelect" data-placeholder="Escolha um estado..." class="chosen-select" style="width:350px;" tabindex="2">
 											
 										</select>
 									</div>
@@ -185,8 +184,7 @@
         </div>
 
 
-    <!-- Mainly scripts 
-    <script src="<c:url value="/resources/js/jquery-2.1.1.js"/>"></script>-->
+    <!-- Mainly scripts -->
     <script src="<c:url value="/resources/js/jquery-2.1.4.js"/>"></script>
     <script src="<c:url value="/resources/js/jquery-2.1.4.min.js"/>"></script>
     

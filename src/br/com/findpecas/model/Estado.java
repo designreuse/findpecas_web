@@ -10,6 +10,9 @@ import javax.persistence.Id;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 @Entity
 @NamedQuery(name="Estado.findAll", query="SELECT e FROM Estado e")
 public class Estado  {
@@ -26,6 +29,7 @@ public class Estado  {
 	private String uf;
 
 	@OneToMany(mappedBy="estado")
+	@JsonManagedReference
 	private List<Cidade> cidades;
 
 	public Estado() {
@@ -63,6 +67,7 @@ public class Estado  {
 		this.uf = uf;
 	}
 
+	@JsonIgnore
 	public List<Cidade> getCidades() {
 		return this.cidades;
 	}

@@ -10,5 +10,6 @@ public interface IModeloVeiculoDAO extends IDAOGenerico<ModeloVeiculo> {
 	
 	List<ModeloVeiculo> listarPorFabricante(Fabricante fabricante);
 	ModeloVeiculo buscarPorNome(String nome);
+	List<ModeloVeiculo> buscarPorFabricante(Fabricante fabricante);
 
 }

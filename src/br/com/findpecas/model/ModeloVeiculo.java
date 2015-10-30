@@ -13,6 +13,9 @@ import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 @Table(name="modelo_veiculo")
 @NamedQuery(name="ModeloVeiculo.findAll", query="SELECT m FROM ModeloVeiculo m")
@@ -27,9 +30,11 @@ public class ModeloVeiculo  {
 
 	@ManyToOne
 	@JoinColumn(name="cod_fabricante")
+	@JsonBackReference
 	private Fabricante fabricante;
 
 	@OneToMany(mappedBy="modeloVeiculo")
+	@JsonIgnore
 	private List<Veiculo> veiculos;
 
 	public ModeloVeiculo() {

@@ -1,11 +1,11 @@
-package br.com.findpecas.dao;
+package br.com.findpecas.service;
 
 import java.util.List;
 
 import br.com.findpecas.model.Estado;
 
-public interface IEstadoDAO {
-
+public interface IEstadoService {
+	
 	/**
 	 * 
 	 * @return
@@ -32,5 +32,5 @@ public interface IEstadoDAO {
 	 * @return
 	 */
 	List<Estado> buscarPorRegiao(String regiao);
-	
+
 }

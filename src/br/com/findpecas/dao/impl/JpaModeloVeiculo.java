@@ -65,4 +65,16 @@ public class JpaModeloVeiculo implements IModeloVeiculoDAO{
 		return modeloVeiculo;
 	}
 
+	@Override
+	public List<ModeloVeiculo> buscarPorFabricante(Fabricante fabricante) {
+		String consulta = "select m from ModeloVeiculo m where m.fabricante = :fabricante";
+		TypedQuery<ModeloVeiculo> query =
+		manager.createQuery(consulta, ModeloVeiculo.class);
+		query.setParameter("fabricante", fabricante);
+		
+		List<ModeloVeiculo> modelosVeiculo = query.getResultList();
+		
+		return modelosVeiculo;
+	}
+
 }

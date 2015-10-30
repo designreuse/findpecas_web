@@ -12,6 +12,9 @@ import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 @Entity
 @Table(name="tipo_veiculo")
 @NamedQuery(name="TipoVeiculo.findAll", query="SELECT t FROM TipoVeiculo t")
@@ -28,7 +31,8 @@ public class TipoVeiculo  {
 	private List<Empresa> empresas;
 
 	@ManyToMany(mappedBy="tipoVeiculos")
-	private List<Fabricante> fabricantes;
+	@JsonManagedReference
+	private List<Fabricante> fabricantes; 
 
 	@OneToMany(mappedBy="tipoVeiculo")
 	private List<Veiculo> veiculos;
@@ -52,6 +56,7 @@ public class TipoVeiculo  {
 		this.descricao = descricao;
 	}
 
+	@JsonIgnore
 	public List<Empresa> getEmpresas() {
 		return this.empresas;
 	}
@@ -60,6 +65,7 @@ public class TipoVeiculo  {
 		this.empresas = empresas;
 	}
 
+	@JsonIgnore
 	public List<Fabricante> getFabricantes() {
 		return this.fabricantes;
 	}
@@ -68,6 +74,7 @@ public class TipoVeiculo  {
 		this.fabricantes = fabricantes;
 	}
 
+	@JsonIgnore
 	public List<Veiculo> getVeiculos() {
 		return this.veiculos;
 	}

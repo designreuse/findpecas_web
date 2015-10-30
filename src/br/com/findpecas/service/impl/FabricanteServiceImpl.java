@@ -8,6 +8,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import br.com.findpecas.dao.IFabricanteDAO;
 import br.com.findpecas.model.Fabricante;
+import br.com.findpecas.model.TipoVeiculo;
 import br.com.findpecas.service.IFabricanteService;
 
 @Transactional
@@ -42,6 +43,11 @@ public class FabricanteServiceImpl implements IFabricanteService {
 	@Override
 	public Fabricante buscarPorNome(String nome) {
 		return fabricanteDao.buscarPorNome(nome);
+	}
+
+	@Override
+	public List<Fabricante> listarPorTipoVeiculo(TipoVeiculo tipoVeiculo) {
+		return fabricanteDao.listarPorTipoVeiculo(tipoVeiculo);
 	}
 
 }

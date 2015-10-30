@@ -10,8 +10,11 @@ import br.com.findpecas.service.ICartaoService;
 @Service("cartaoServiceImpl")
 @Transactional
 public class CartaoService implements ICartaoService {
+	// ATRIBUTOS ------------------
 
 	@Autowired
 	private ICartaoDAO cartaoDao;
+	
+	// MÉTODOS --------------------
 	
 }
